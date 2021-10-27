@@ -14,6 +14,8 @@ import { Place } from 'src/models/place.entity';
 import { PlaceType } from 'src/models/place_type.entity';
 import { EquipmentService } from 'src/services/equipment.service';
 import { PlaceService } from 'src/services/place.service';
+import { AccessoryService } from 'src/services/accessory.service';
+import { AccessoryController } from 'src/controllers/accessory.controller';
 
 @Module({
   imports: [
@@ -28,7 +30,17 @@ import { PlaceService } from 'src/services/place.service';
       Material,
     ]),
   ],
-  controllers: [EquipmentController, PlaceController, MaterialController],
-  providers: [EquipmentService, PlaceService, MaterialService],
+  controllers: [
+    EquipmentController,
+    PlaceController,
+    MaterialController,
+    AccessoryController,
+  ],
+  providers: [
+    EquipmentService,
+    PlaceService,
+    MaterialService,
+    AccessoryService,
+  ],
 })
 export class InventoryModule {}

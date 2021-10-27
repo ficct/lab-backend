@@ -8,4 +8,8 @@ export class EquipmentService extends TypeOrmCrudService<Equipment> {
   constructor(@InjectRepository(Equipment) repo) {
     super(repo);
   }
+
+  uploadLoads(): Promise<any> {
+    return null;
+  }
 }

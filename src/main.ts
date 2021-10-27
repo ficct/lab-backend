@@ -12,10 +12,9 @@ async function bootstrap() {
       'Bienvenido a la documentacion de la API utilizada para los sistemas de la facultad',
     )
     .setVersion('1.0')
-    .addTag('api')
     .build();
   const document = SwaggerModule.createDocument(app, config);
-  SwaggerModule.setup('api', app, document);
+  SwaggerModule.setup('apidoc', app, document);
   await app.listen(3000);
 }
 bootstrap();
