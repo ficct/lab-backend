@@ -1,8 +1,10 @@
 # compiled output
 /dist
 /node_modules
+/src/migrations
 
 /src/migrations
+ormconfig.json
 
 # Logs
 logs
@@ -35,4 +37,3 @@ lerna-debug.log*
 !.vscode/launch.json
 !.vscode/extensions.json
 
-ormconfig.json
