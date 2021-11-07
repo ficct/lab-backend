@@ -3,10 +3,36 @@ import { Strategy } from '../strategy';
 
 export class LoadF08 implements Strategy {
   public doAlgorithm(file: FileDTO[]): any[] {
-    const x = [];
-    file.forEach((f) => {
-      x.push(f.name);
+    //Check if Index tab exits
+    const main_index = file.findIndex((x) => {
+      return x.name === 'Indice';
     });
-    return x;
+    const data_index: number[] = [];
+
+    const lab = file[main_index].data[0][0].split(' ')[2];
+
+    // Check if there are tabs
+    const tab_names: string[] = file
+      .map((tab) => {
+        return tab.name;
+      })
+      .filter((item) => {
+        const regex = new RegExp(`${lab}*`);
+        return regex.test(item);
+      });
+
+    for (let i = 0; i < tab_names.length; i++) {
+      const element = tab_names[i];
+      data_index.push(
+        file.findIndex((x) => {
+          return x.name === element;
+        }),
+      );
+    }
+
+    console.log(data_index);
+    console.log(main_index);
+
+    return tab_names;
   }
 }
