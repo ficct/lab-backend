@@ -2,7 +2,7 @@ import { FileDTO } from 'src/dtos/file_parse.dto';
 import { Strategy } from '../strategy';
 
 export class LoadF08 implements Strategy {
-  public doAlgorithm(file: FileDTO[]): any[] {
+  public doAlgorithm(file: FileDTO[], id: string): any[] {
     //Check if Index tab exits
     const main_index = file.findIndex((x) => {
       return x.name === 'Indice';
@@ -17,7 +17,7 @@ export class LoadF08 implements Strategy {
         return tab.name;
       })
       .filter((item) => {
-        const regex = new RegExp(`${lab}*`);
+        const regex = new RegExp(`${id}*`);
         return regex.test(item);
       });
 
@@ -33,6 +33,6 @@ export class LoadF08 implements Strategy {
     console.log(data_index);
     console.log(main_index);
 
-    return tab_names;
+    return [];
   }
 }

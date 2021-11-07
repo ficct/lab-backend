@@ -17,7 +17,7 @@ export class Context {
     this.strategy = strategy;
   }
 
-  public generateBulk(file: FileDTO[]): any[] {
-    return this.strategy.doAlgorithm(file);
+  public generateBulk(file: FileDTO[], id: string): any[] {
+    return this.strategy.doAlgorithm(file, id);
   }
 }

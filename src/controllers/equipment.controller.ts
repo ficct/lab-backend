@@ -1,6 +1,8 @@
 import {
+  Body,
   Controller,
   Post,
+  Query,
   UploadedFile,
   UseInterceptors,
 } from '@nestjs/common';
@@ -45,10 +47,10 @@ export class EquipmentController implements CrudController<Equipment> {
   @UseInterceptors(FileInterceptor('file'))
   async createLoads(
     @UploadedFile() file: Express.Multer.File,
+    @Body('place_id') id: number,
   ): Promise<Equipment[]> {
     const parsed_file: FileDTO[] = xlsx.parse(file.buffer);
-    const context = new Context(new LoadF08());
-    const bulk = context.generateBulk(parsed_file);
-    return await this.service.uploadLoads(bulk);
+    const place = await this.service.findOne(id);
+    return await this.service.uploadLoads(parsed_file, place.code);
   }
 }

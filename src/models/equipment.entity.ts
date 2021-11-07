@@ -1,5 +1,13 @@
 import { ApiProperty } from '@nestjsx/crud/lib/crud';
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  ManyToOne,
+  OneToMany,
+} from 'typeorm';
+import { Accessory } from './accessory.entity';
+import { Place } from './place.entity';
 
 @Entity()
 export class Equipment {
@@ -30,4 +38,11 @@ export class Equipment {
   @ApiProperty({ description: 'Alta Baja.' })
   @Column({ type: 'bool' })
   high_drop: boolean;
+
+  // RELATIONS:
+  @ManyToOne(() => Place, (place) => place.equipments)
+  place: Place;
+
+  @OneToMany(() => Accessory, (accessory) => accessory.equipment)
+  accesories: Accessory[];
 }
