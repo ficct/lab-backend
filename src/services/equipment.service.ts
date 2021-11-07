@@ -9,7 +9,8 @@ export class EquipmentService extends TypeOrmCrudService<Equipment> {
     super(repo);
   }
 
-  uploadLoads(): Promise<Equipment[]> {
+  uploadLoads(bulk: any): Promise<Equipment[]> {
+    console.log(bulk);
     return null;
   }
 }
