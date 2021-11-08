@@ -10,6 +10,6 @@ export class Material {
   @Column({ type: 'bool' }) high_drop: boolean;
 
   // RELATIONS:
-  @ManyToOne(() => Place, (place) => place.equipments)
+  @ManyToOne(() => Place, (place) => place.materials)
   place: Place;
 }

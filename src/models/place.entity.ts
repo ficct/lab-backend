@@ -4,9 +4,13 @@ import {
   Column,
   ManyToOne,
   OneToMany,
+  OneToOne,
+  JoinColumn,
 } from 'typeorm';
+import { Endowment } from './endowment.entity';
 import { Equipment } from './equipment.entity';
 import { Material } from './material.entity';
+import { PlaceType } from './place_type.entity';
 @Entity()
 export class Place {
   @PrimaryGeneratedColumn() id: number;
@@ -21,4 +25,11 @@ export class Place {
 
   @OneToMany(() => Material, (material) => material.place)
   materials: Material[];
+
+  @OneToMany(() => Endowment, (endowment) => endowment.place)
+  endowments: Endowment[];
+
+  @OneToOne(() => PlaceType)
+  @JoinColumn()
+  place_type: PlaceType;
 }

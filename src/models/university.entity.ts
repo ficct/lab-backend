@@ -1,7 +1,10 @@
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
+import { Faculty } from './faculty.entity';
 @Entity()
 export class University {
   @PrimaryGeneratedColumn() id: number;
   @Column({ type: 'varchar' }) name: string;
   @Column({ type: 'varchar' }) abbreviation: string;
+  @OneToMany(() => Faculty, (faculty) => faculty.university)
+  faculties: Faculty[];
 }

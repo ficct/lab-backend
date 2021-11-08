@@ -1,7 +1,11 @@
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
+import { Place } from './place.entity';
 @Entity()
 export class Endowment {
   @PrimaryGeneratedColumn() id: number;
   @Column({ type: 'bool' }) validated: boolean;
   @Column({ type: 'bool' }) high_drop: boolean;
+  // RELATIONS:
+  @ManyToOne(() => Place, (place) => place.endowments)
+  place: Place;
 }
