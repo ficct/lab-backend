@@ -1,4 +1,5 @@
 import {
+  BadRequestException,
   Body,
   Controller,
   Post,
@@ -18,8 +19,6 @@ import { FileInterceptor } from '@nestjs/platform-express';
 import { Equipment } from 'src/models/equipment.entity';
 import { EquipmentService } from 'src/services/equipment.service';
 import xlsx from 'node-xlsx';
-import { Context } from 'src/loads/context';
-import { LoadF08 } from 'src/loads/strategies/f08.load';
 import { FileDTO } from 'src/dtos/file_parse.dto';
 
 @Crud({
@@ -51,6 +50,9 @@ export class EquipmentController implements CrudController<Equipment> {
   ): Promise<Equipment[]> {
     const parsed_file: FileDTO[] = xlsx.parse(file.buffer);
     const place = await this.service.findOne(id);
+    if (place === undefined) {
+      throw new BadRequestException('Invalid Place.');
+    }
     return await this.service.uploadLoads(parsed_file, place.code);
   }
 }

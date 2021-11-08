@@ -1,5 +1,7 @@
-import { Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 @Entity()
 export class Partition {
   @PrimaryGeneratedColumn() id: number;
+  @Column({ type: 'varchar' }) name: string;
+  @Column({ type: 'varchar' }) version: string;
 }

@@ -1,3 +1,9 @@
+import { ModuleService } from './../../services/module.service';
+import { University } from 'src/models/university.entity';
+import { CareerController } from './../../controllers/career.controller';
+import { UniversityController } from './../../controllers/university.controller';
+import { FacultyController } from './../../controllers/faculty.controller';
+import { UniversityService } from './../../services/university.service';
 import { MaterialService } from './../../services/material.service';
 import { MaterialController } from './../../controllers/material.controller';
 import { EndowmentDetail } from './../../models/endowment_detail.entity';
@@ -16,6 +22,15 @@ import { EquipmentService } from 'src/services/equipment.service';
 import { PlaceService } from 'src/services/place.service';
 import { AccessoryService } from 'src/services/accessory.service';
 import { AccessoryController } from 'src/controllers/accessory.controller';
+import { FacultyService } from 'src/services/faculty.service';
+import { ReportService } from 'src/services/report.service';
+import { TaskService } from 'src/services/task.service';
+import { TaskController } from 'src/controllers/task.controller';
+import { ReportController } from 'src/controllers/report.controller';
+import { Faculty } from 'src/models/faculty.entity';
+import { Report } from 'src/models/report.entity';
+import { Modulo } from 'src/models/module.entity';
+import { ModuleController } from 'src/controllers/module.controller';
 
 @Module({
   imports: [
@@ -28,6 +43,10 @@ import { AccessoryController } from 'src/controllers/accessory.controller';
       EndowmentDetail,
       Type,
       Material,
+      University,
+      Faculty,
+      Report,
+      Modulo,
     ]),
   ],
   controllers: [
@@ -35,12 +54,20 @@ import { AccessoryController } from 'src/controllers/accessory.controller';
     PlaceController,
     MaterialController,
     AccessoryController,
+    FacultyController,
+    UniversityController,
+    ReportController,
+    ModuleController,
   ],
   providers: [
     EquipmentService,
     PlaceService,
     MaterialService,
     AccessoryService,
+    FacultyService,
+    ReportService,
+    UniversityService,
+    ModuleService,
   ],
 })
 export class InventoryModule {}

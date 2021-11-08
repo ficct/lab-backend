@@ -4,7 +4,7 @@ import { Faculty } from './faculty.entity';
 export class University {
   @PrimaryGeneratedColumn() id: number;
   @Column({ type: 'varchar' }) name: string;
-  @Column({ type: 'varchar' }) abbreviation: string;
-  @OneToMany(() => Faculty, (faculty) => faculty.university)
+  @Column({ type: 'varchar', nullable: true }) abbreviation: string;
+  @OneToMany(() => Faculty, (faculty) => faculty.university, { cascade: true })
   faculties: Faculty[];
 }

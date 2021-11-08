@@ -10,6 +10,7 @@ import {
 import { Endowment } from './endowment.entity';
 import { Equipment } from './equipment.entity';
 import { Material } from './material.entity';
+import { Modulo } from './module.entity';
 import { PlaceType } from './place_type.entity';
 @Entity()
 export class Place {
@@ -28,6 +29,9 @@ export class Place {
 
   @OneToMany(() => Endowment, (endowment) => endowment.place)
   endowments: Endowment[];
+
+  @ManyToOne(() => Modulo, (module) => module.places)
+  module: Modulo;
 
   @OneToOne(() => PlaceType)
   @JoinColumn()
