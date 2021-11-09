@@ -9,8 +9,6 @@ export class LoadF08 implements Strategy {
     });
     const data_index: number[] = [];
 
-    const lab = file[main_index].data[0][0].split(' ')[2];
-
     // Check if there are tabs
     const tab_names: string[] = file
       .map((tab) => {
@@ -30,9 +28,44 @@ export class LoadF08 implements Strategy {
       );
     }
 
-    console.log(data_index);
-    console.log(main_index);
+    const data = [];
 
-    return [];
+    const header = [
+      'NRO',
+      'CODIGO',
+      'UND',
+      'DESCRIPCION',
+      'ESTADO',
+      'OBSERVACION',
+    ];
+    const a = JSON.stringify(header);
+    for (let i = 0; i < data_index.length; ++i) {
+      const current_file = file[data_index[i]];
+
+      for (let j = 0; j < current_file.data.length; ++j) {
+        const current_line = current_file.data[j];
+        const b = JSON.stringify(current_line);
+
+        if (a === b) {
+          j++;
+          while (j < current_file.data.length) {
+            //console.log(current_file.data[j]);
+            data.push({
+              code: current_file.data[j][1],
+              unit: current_file.data[j][2],
+              description: current_file.data[j][3],
+              status: current_file.data[j][4],
+              obs: current_file.data[j][5],
+              is_available: true,
+              loanable: true,
+              high_drop: true,
+            });
+            j++;
+          }
+        }
+      }
+    }
+
+    return data;
   }
 }

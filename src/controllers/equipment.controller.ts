@@ -20,6 +20,7 @@ import { Equipment } from 'src/models/equipment.entity';
 import { EquipmentService } from 'src/services/equipment.service';
 import xlsx from 'node-xlsx';
 import { FileDTO } from 'src/dtos/file_parse.dto';
+import { PlaceService } from 'src/services/place.service';
 
 @Crud({
   model: {
@@ -29,7 +30,10 @@ import { FileDTO } from 'src/dtos/file_parse.dto';
 @ApiTags('Equipment')
 @Controller('equipments')
 export class EquipmentController implements CrudController<Equipment> {
-  constructor(public service: EquipmentService) {}
+  constructor(
+    public service: EquipmentService,
+    public placeService: PlaceService,
+  ) {}
 
   @ApiOperation({
     summary: 'Upload bulk from file',
@@ -49,10 +53,10 @@ export class EquipmentController implements CrudController<Equipment> {
     @Body('place_id') id: number,
   ): Promise<Equipment[]> {
     const parsed_file: FileDTO[] = xlsx.parse(file.buffer);
-    const place = await this.service.findOne(id);
+    const place = await this.placeService.findOne(id);
     if (place === undefined) {
       throw new BadRequestException('Invalid Place.');
     }
-    return await this.service.uploadLoads(parsed_file, place.code);
+    return await this.service.uploadLoads(parsed_file, place.place_code);
   }
 }

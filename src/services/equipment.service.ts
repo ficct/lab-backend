@@ -21,6 +21,7 @@ export class EquipmentService extends TypeOrmCrudService<Equipment> {
     const context = new Context(new LoadF08());
     const bulk = context.generateBulk(parsed_file, id);
     console.log('Creating bulk of Equipments!');
+    console.log(id);
     return this.repo.save(bulk);
   }
 }

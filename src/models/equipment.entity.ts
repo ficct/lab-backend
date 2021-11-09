@@ -16,7 +16,7 @@ export class Equipment {
   @ApiProperty({
     description: 'Código unico del equipo. Ejemplo: U070312462213',
   })
-  @Column({ type: 'varchar' })
+  @Column({ type: 'varchar', unique: true, nullable: false })
   code: string;
 
   @ApiProperty({

@@ -18,7 +18,7 @@ export class Place {
   @Column({ type: 'varchar' }) name: string;
   @Column({ type: 'varchar' }) place_code: string;
   @Column({ type: 'int' }) capacity: number;
-  @Column({ type: 'bool' }) high_drop: boolean; // Alta-Baja
+  @Column({ type: 'bool', default: true }) high_drop: boolean; // Alta-Baja
 
   // RELATIONS:
   @OneToMany(() => Equipment, (equipment) => equipment.place)
