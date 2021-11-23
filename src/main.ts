@@ -35,6 +35,7 @@ async function bootstrap() {
     },
   };
   await RedocModule.setup('docs', app, document, redocOptions);
+  app.enableCors();
   await app.listen(3000);
 }
 bootstrap();

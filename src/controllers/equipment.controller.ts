@@ -59,4 +59,18 @@ export class EquipmentController implements CrudController<Equipment> {
     }
     return await this.service.uploadLoads(parsed_file, place.place_code);
   }
+
+  @Post('upload_bulk_temp')
+  @ApiBody({
+    required: true,
+  })
+  @ApiCreatedResponse({
+    description: 'File upload response.',
+  })
+  @ApiConsumes('multipart/form-data')
+  @UseInterceptors(FileInterceptor('file'))
+  async returnLoad(@UploadedFile() file: Express.Multer.File): Promise<any> {
+    const parsed_file: FileDTO[] = xlsx.parse(file.buffer);
+    return parsed_file;
+  }
 }

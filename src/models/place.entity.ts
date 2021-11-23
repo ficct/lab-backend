@@ -1,3 +1,4 @@
+import { Transaction } from './transaction.entity';
 import {
   Entity,
   PrimaryGeneratedColumn,
@@ -36,4 +37,10 @@ export class Place {
   @OneToOne(() => PlaceType)
   @JoinColumn()
   place_type: PlaceType;
+
+  @OneToMany(() => Transaction, (transaction) => transaction.origin)
+  transactions_origin: Transaction[];
+
+  @OneToMany(() => Transaction, (transaction) => transaction.destination)
+  transactions_destination: Transaction[];
 }
