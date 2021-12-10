@@ -13,12 +13,12 @@ lab**work** is a management system developed for the Faculty of Engineering in C
 
 ## Migration
 
-The first thing you need to do is running the database migration with the followign commands:
+The first thing you need to do is running the database migration with the following commands:
 
   1. ```npm run migration:generate -- <migration_name>```
   2. ```npm run migration:run```
 
-After that you can run the next commands in order to run the project:
+After that, you can run the next commands in order to run the project:
 
 ```bash
 # development
