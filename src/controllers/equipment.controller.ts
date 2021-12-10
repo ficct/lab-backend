@@ -71,6 +71,6 @@ export class EquipmentController implements CrudController<Equipment> {
   @UseInterceptors(FileInterceptor('file'))
   async returnLoad(@UploadedFile() file: Express.Multer.File): Promise<any> {
     const parsed_file: FileDTO[] = xlsx.parse(file.buffer);
-    return parsed_file;
+    return this.service.generateLoads(parsed_file);
   }
 }

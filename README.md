@@ -11,6 +11,15 @@ lab**work** is a management system developed for the Faculty of Engineering in C
 
 ## Running the app
 
+## Migration
+
+The first thing you need to do is running the database migration with the followign commands:
+
+  1. ```migration:generate```
+  2. ```migration:run```
+
+After that you can run the next commands in order to run the project:
+
 ```bash
 # development
 $ npm run start

@@ -1,3 +1,4 @@
+import { LoadClientF08 } from './../loads/strategies/f08Client.load';
 import { FileDTO } from 'src/dtos/file_parse.dto';
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
@@ -15,6 +16,12 @@ export class EquipmentService extends TypeOrmCrudService<Equipment> {
     @InjectRepository(Place) private placeRepository: Repository<Place>,
   ) {
     super(repo);
+  }
+
+  generateLoads(parsed_file: FileDTO[]): any {
+    const context = new Context(new LoadClientF08());
+    const bulk = context.generateBulk(parsed_file);
+    return bulk;
   }
 
   uploadLoads(parsed_file: FileDTO[], id: string): Promise<Equipment[]> {
