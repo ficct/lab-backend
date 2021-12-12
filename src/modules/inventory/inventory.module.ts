@@ -1,36 +1,44 @@
-import { ModuleService } from './../../services/module.service';
-import { University } from 'src/models/university.entity';
-import { CareerController } from './../../controllers/career.controller';
-import { UniversityController } from './../../controllers/university.controller';
-import { FacultyController } from './../../controllers/faculty.controller';
-import { UniversityService } from './../../services/university.service';
-import { MaterialService } from './../../services/material.service';
-import { MaterialController } from './../../controllers/material.controller';
-import { EndowmentDetail } from './../../models/endowment_detail.entity';
-import { Material } from './../../models/material.entity';
-import { Type } from './../../models/type.entity';
-import { Endowment } from './../../models/endowment.entity';
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { EquipmentController } from 'src/controllers/equipment.controller';
-import { PlaceController } from 'src/controllers/place.controller';
-import { Accessory } from 'src/models/accessory.entity';
-import { Equipment } from 'src/models/equipment.entity';
-import { Place } from 'src/models/place.entity';
-import { PlaceType } from 'src/models/place_type.entity';
-import { EquipmentService } from 'src/services/equipment.service';
-import { PlaceService } from 'src/services/place.service';
-import { AccessoryService } from 'src/services/accessory.service';
-import { AccessoryController } from 'src/controllers/accessory.controller';
-import { FacultyService } from 'src/services/faculty.service';
-import { ReportService } from 'src/services/report.service';
-import { TaskService } from 'src/services/task.service';
-import { TaskController } from 'src/controllers/task.controller';
-import { ReportController } from 'src/controllers/report.controller';
-import { Faculty } from 'src/models/faculty.entity';
-import { Report } from 'src/models/report.entity';
-import { Modulo } from 'src/models/module.entity';
-import { ModuleController } from 'src/controllers/module.controller';
+
+import { University } from 'src/modules/inventory/university/university.entity';
+import { UniversityService } from './university/university.service';
+import { UniversityController } from './university/university.controller';
+
+import { CareerController } from './career/career.controller';
+
+import { Faculty } from 'src/modules/inventory/faculty/faculty.entity';
+import { FacultyService } from 'src/modules/inventory/faculty/faculty.service';
+import { FacultyController } from './faculty/faculty.controller';
+
+import { Material } from './material/material.entity';
+import { MaterialService } from './material/material.service';
+import { MaterialController } from './material/material.controller';
+
+import { Modulo } from 'src/modules/inventory/module/module.entity';
+import { ModuleService } from './module/module.service';
+import { ModuleController } from 'src/modules/inventory/module/module.controller';
+
+import { Type } from './../../models/type.entity';
+import { PlaceType } from 'src/modules/inventory/place/place_type.entity';
+import { Endowment } from './../../models/endowment.entity';
+import { EndowmentDetail } from './../../models/endowment_detail.entity';
+
+import { Place } from 'src/modules/inventory/place/place.entity';
+import { PlaceService } from 'src/modules/inventory/place/place.service';
+import { PlaceController } from 'src/modules/inventory/place/place.controller';
+
+import { Accessory } from 'src/modules/inventory/accesory/accessory.entity';
+import { AccessoryService } from 'src/modules/inventory/accesory/accessory.service';
+import { AccessoryController } from 'src/modules/inventory/accesory/accessory.controller';
+
+import { Equipment } from 'src/modules/inventory/equipment/equipment.entity';
+import { EquipmentService } from 'src/modules/inventory/equipment/equipment.service';
+import { EquipmentController } from 'src/modules/inventory/equipment/equipment.controller';
+
+import { Report } from 'src/modules/inventory/report/report.entity';
+import { ReportService } from 'src/modules/inventory/report/report.service';
+import { ReportController } from 'src/modules/inventory/report/report.controller';
 
 @Module({
   imports: [
@@ -50,14 +58,15 @@ import { ModuleController } from 'src/controllers/module.controller';
     ]),
   ],
   controllers: [
+    MaterialController,
+    ReportController,
+    CareerController,
+    AccessoryController,
     EquipmentController,
     PlaceController,
-    MaterialController,
-    AccessoryController,
+    ModuleController,
     FacultyController,
     UniversityController,
-    ReportController,
-    ModuleController,
   ],
   providers: [
     EquipmentService,
