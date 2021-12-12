@@ -1,4 +1,4 @@
-import { Equipment } from 'src/models/equipment.entity';
+import { Equipment } from 'src/modules/inventory/equipment/equipment.entity';
 import {
   Column,
   Entity,
@@ -8,8 +8,8 @@ import {
   ManyToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-import { Place } from './place.entity';
-import { User } from './user.entity';
+import { Place } from '../modules/inventory/place/place.entity';
+import { User } from '../modules/auth/user/user.entity';
 @Entity()
 export class Transaction {
   @PrimaryGeneratedColumn() id: number;
