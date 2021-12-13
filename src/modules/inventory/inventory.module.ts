@@ -1,3 +1,5 @@
+import { Permission } from './../../models/permission.entity';
+import { RoleService } from './../../services/role.service';
 import { ModuleService } from './../../services/module.service';
 import { University } from 'src/models/university.entity';
 import { CareerController } from './../../controllers/career.controller';
@@ -31,6 +33,10 @@ import { Faculty } from 'src/models/faculty.entity';
 import { Report } from 'src/models/report.entity';
 import { Modulo } from 'src/models/module.entity';
 import { ModuleController } from 'src/controllers/module.controller';
+import { PermissionService } from 'src/services/permission.service';
+import { Role } from 'src/models/role.entity';
+import { RoleController } from 'src/controllers/role.controller';
+import { PermissionController } from 'src/controllers/permission.controller';
 
 @Module({
   imports: [
@@ -47,6 +53,8 @@ import { ModuleController } from 'src/controllers/module.controller';
       Faculty,
       Report,
       Modulo,
+      Role,
+      Permission,
     ]),
   ],
   controllers: [
@@ -58,6 +66,8 @@ import { ModuleController } from 'src/controllers/module.controller';
     UniversityController,
     ReportController,
     ModuleController,
+    RoleController,
+    PermissionController,
   ],
   providers: [
     EquipmentService,
@@ -68,6 +78,8 @@ import { ModuleController } from 'src/controllers/module.controller';
     ReportService,
     UniversityService,
     ModuleService,
+    RoleService,
+    PermissionService,
   ],
 })
 export class InventoryModule {}

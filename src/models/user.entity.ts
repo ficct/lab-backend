@@ -14,6 +14,7 @@ export class User {
   @Column({ type: 'varchar' }) name: string;
   @Column({ type: 'varchar' }) lastname: string;
   @Column({ type: 'varchar' }) email: string;
+  @Column({ type: 'varchar' }) code: string;
   @Column({ type: 'int' }) ci: number;
   @Column({ type: 'bool' }) high_drop: boolean;
 
