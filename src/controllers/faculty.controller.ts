@@ -1,4 +1,5 @@
-import { Controller } from '@nestjs/common';
+import { Controller, UseGuards } from '@nestjs/common';
+import { AuthGuard } from '@nestjs/passport';
 import { ApiTags } from '@nestjs/swagger';
 import { Crud, CrudController } from '@nestjsx/crud';
 
@@ -11,6 +12,7 @@ import { FacultyService } from 'src/services/faculty.service';
   },
 })
 @ApiTags('Faculty')
+@UseGuards(AuthGuard('jwt'))
 @Controller('faculties')
 export class FacultyController implements CrudController<Faculty> {
   constructor(public service: FacultyService) {}

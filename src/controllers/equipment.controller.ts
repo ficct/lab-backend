@@ -5,6 +5,7 @@ import {
   Post,
   Query,
   UploadedFile,
+  UseGuards,
   UseInterceptors,
 } from '@nestjs/common';
 import {
@@ -21,6 +22,7 @@ import { EquipmentService } from 'src/services/equipment.service';
 import xlsx from 'node-xlsx';
 import { FileDTO } from 'src/dtos/file_parse.dto';
 import { PlaceService } from 'src/services/place.service';
+import { AuthGuard } from '@nestjs/passport';
 
 @Crud({
   model: {
@@ -28,6 +30,7 @@ import { PlaceService } from 'src/services/place.service';
   },
 })
 @ApiTags('Equipment')
+@UseGuards(AuthGuard('jwt'))
 @Controller('equipments')
 export class EquipmentController implements CrudController<Equipment> {
   constructor(
