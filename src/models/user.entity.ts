@@ -1,4 +1,6 @@
 import { Transaction } from './transaction.entity';
+import * as bcrypt from 'bcrypt';
+
 import {
   Entity,
   PrimaryGeneratedColumn,
@@ -6,6 +8,8 @@ import {
   ManyToMany,
   JoinTable,
   OneToMany,
+  BeforeInsert,
+  CreateDateColumn,
 } from 'typeorm';
 import { Role } from './role.entity';
 @Entity()
@@ -14,9 +18,12 @@ export class User {
   @Column({ type: 'varchar' }) name: string;
   @Column({ type: 'varchar' }) lastname: string;
   @Column({ type: 'varchar' }) email: string;
+  @Column({ type: 'varchar' }) password: string;
   @Column({ type: 'varchar' }) code: string;
   @Column({ type: 'int' }) ci: number;
   @Column({ type: 'bool' }) high_drop: boolean;
+  @CreateDateColumn() created_on?: Date;
+  @CreateDateColumn() updated_on?: Date;
 
   @ManyToMany(() => Role)
   @JoinTable()
@@ -27,4 +34,9 @@ export class User {
 
   @OneToMany(() => Transaction, (transaction) => transaction.recipient)
   transactions_recipient: Transaction[];
+
+  @BeforeInsert()
+  async hashPassword() {
+    this.password = await bcrypt.hash(this.password, 10);
+  }
 }
