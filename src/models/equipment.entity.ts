@@ -7,6 +7,7 @@ import {
   OneToMany,
 } from 'typeorm';
 import { Accessory } from './accessory.entity';
+import { Allocation } from './allocation.entity';
 import { Place } from './place.entity';
 
 @Entity()
@@ -45,4 +46,7 @@ export class Equipment {
 
   @OneToMany(() => Accessory, (accessory) => accessory.equipment)
   accesories: Accessory[];
+
+  @ManyToOne(() => Allocation, (allocation) => allocation.equipments)
+  allocation: Allocation;
 }

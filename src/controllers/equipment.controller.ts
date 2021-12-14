@@ -30,7 +30,7 @@ import { AuthGuard } from '@nestjs/passport';
   },
 })
 @ApiTags('Equipment')
-@UseGuards(AuthGuard('jwt'))
+//@UseGuards(AuthGuard('jwt'))
 @Controller('equipments')
 export class EquipmentController implements CrudController<Equipment> {
   constructor(

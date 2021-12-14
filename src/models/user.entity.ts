@@ -12,6 +12,7 @@ import {
   CreateDateColumn,
 } from 'typeorm';
 import { Role } from './role.entity';
+import { Allocation } from './allocation.entity';
 @Entity()
 export class User {
   @PrimaryGeneratedColumn() id: number;
@@ -28,6 +29,9 @@ export class User {
   @ManyToMany(() => Role)
   @JoinTable()
   roles: Role[];
+
+  @OneToMany(() => Allocation, (alloc) => alloc.user, { cascade: true })
+  allocations: Allocation[];
 
   @OneToMany(() => Transaction, (transaction) => transaction.owner)
   transactions_owner: Transaction[];
