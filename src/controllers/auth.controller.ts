@@ -4,7 +4,6 @@ import {
   Post,
   HttpException,
   HttpStatus,
-  UsePipes,
   Get,
   Req,
   UseGuards,
