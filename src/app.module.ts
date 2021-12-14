@@ -18,7 +18,9 @@ import { ConfigModule } from '@nestjs/config';
     ScheduleModule,
     AuthModule,
     UsersModule,
-    ConfigModule.forRoot(),
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
   ],
   controllers: [AppController],
   providers: [AppService],
