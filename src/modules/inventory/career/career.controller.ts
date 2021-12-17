@@ -1,9 +1,9 @@
+import { ApiTags } from '@nestjs/swagger';
 import { Controller } from '@nestjs/common';
 import { Crud, CrudController } from '@nestjsx/crud';
-import { ApiSecurity, ApiTags } from '@nestjs/swagger';
 
-import { Career } from 'src/modules/inventory/career/career.entity';
-import { CareerService } from 'src/modules/inventory/career/career.service';
+import { Career } from './career.entity';
+import { CareerService } from './career.service';
 
 @Crud({
   model: {

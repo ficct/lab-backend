@@ -1,5 +1,7 @@
-import { Faculty } from 'src/modules/inventory/faculty/faculty.entity';
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
+
+import { Faculty } from '../faculty/faculty.entity';
+
 @Entity()
 export class Career {
   @PrimaryGeneratedColumn() id: number;

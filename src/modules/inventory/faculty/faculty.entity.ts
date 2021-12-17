@@ -1,13 +1,15 @@
-import { Career } from 'src/modules/inventory/career/career.entity';
-import { University } from 'src/modules/inventory/university/university.entity';
 import {
   Entity,
-  PrimaryGeneratedColumn,
   Column,
   ManyToOne,
   OneToMany,
+  PrimaryGeneratedColumn,
 } from 'typeorm';
+
+import { Career } from '../career/career.entity';
 import { Modulo } from '../module/module.entity';
+import { University } from '../university/university.entity';
+
 @Entity()
 export class Faculty {
   @PrimaryGeneratedColumn() id: number;

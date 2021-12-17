@@ -1,13 +1,15 @@
 import { ApiProperty } from '@nestjsx/crud/lib/crud';
+
 import {
   Entity,
-  PrimaryGeneratedColumn,
   Column,
   ManyToOne,
   OneToMany,
+  PrimaryGeneratedColumn,
 } from 'typeorm';
-import { Accessory } from '../accesory/accessory.entity';
+
 import { Place } from '../place/place.entity';
+import { Accessory } from '../accesory/accessory.entity';
 
 @Entity()
 export class Equipment {

@@ -5,8 +5,9 @@ import {
   ManyToOne,
   OneToMany,
 } from 'typeorm';
-import { Faculty } from '../faculty/faculty.entity';
+
 import { Place } from '../place/place.entity';
+import { Faculty } from '../faculty/faculty.entity';
 @Entity()
 export class Modulo {
   @PrimaryGeneratedColumn() id: number;

@@ -1,12 +1,14 @@
+import xlsx from 'node-xlsx';
+
 import {
-  BadRequestException,
   Body,
-  Controller,
   Post,
-  Query,
+  Controller,
   UploadedFile,
   UseInterceptors,
+  BadRequestException,
 } from '@nestjs/common';
+
 import {
   ApiBody,
   ApiTags,
@@ -14,13 +16,15 @@ import {
   ApiOperation,
   ApiCreatedResponse,
 } from '@nestjs/swagger';
+
 import { Crud, CrudController } from '@nestjsx/crud';
 import { FileInterceptor } from '@nestjs/platform-express';
-import { Equipment } from 'src/modules/inventory/equipment/equipment.entity';
-import { EquipmentService } from 'src/modules/inventory/equipment/equipment.service';
-import xlsx from 'node-xlsx';
+
+import { Equipment } from './equipment.entity';
 import { FileDTO } from 'src/dtos/file_parse.dto';
-import { PlaceService } from 'src/modules/inventory/place/place.service';
+
+import { PlaceService } from '../place/place.service';
+import { EquipmentService } from './equipment.service';
 
 @Crud({
   model: {

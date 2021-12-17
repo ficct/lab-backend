@@ -1,18 +1,21 @@
-import { FileDTO } from 'src/dtos/file_parse.dto';
+import { Repository } from 'typeorm';
+
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { TypeOrmCrudService } from '@nestjsx/crud-typeorm';
+
 import { Context } from 'src/loads/context';
+import { FileDTO } from 'src/dtos/file_parse.dto';
 import { LoadF08 } from 'src/loads/strategies/f08.load';
 
-import { Equipment } from 'src/modules/inventory/equipment/equipment.entity';
-import { Place } from 'src/modules/inventory/place/place.entity';
-import { Repository } from 'typeorm';
+import { Place } from '../place/place.entity';
+import { Equipment } from './equipment.entity';
+
 @Injectable()
 export class EquipmentService extends TypeOrmCrudService<Equipment> {
   constructor(
     @InjectRepository(Equipment) repo,
-    @InjectRepository(Place) private placeRepository: Repository<Place>,
+    @InjectRepository(Place) public placeRepository: Repository<Place>,
   ) {
     super(repo);
   }

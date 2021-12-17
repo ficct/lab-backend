@@ -1,8 +1,9 @@
-import { Controller } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
+import { Controller } from '@nestjs/common';
 import { Crud, CrudController } from '@nestjsx/crud';
-import { Accessory } from 'src/modules/inventory/accesory/accessory.entity';
-import { AccessoryService } from 'src/modules/inventory/accesory/accessory.service';
+
+import { Accessory } from './accessory.entity';
+import { AccessoryService } from './accessory.service';
 
 @Crud({
   model: {

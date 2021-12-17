@@ -2,8 +2,8 @@ import { Controller } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import { Crud, CrudController } from '@nestjsx/crud';
 
-import { Faculty } from 'src/modules/inventory/faculty/faculty.entity';
-import { FacultyService } from 'src/modules/inventory/faculty/faculty.service';
+import { Faculty } from './faculty.entity';
+import { FacultyService } from './faculty.service';
 
 @Crud({
   model: {

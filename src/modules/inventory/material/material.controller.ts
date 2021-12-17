@@ -1,16 +1,9 @@
-import { MaterialService } from './material.service';
+import { ApiTags } from '@nestjs/swagger';
+import { Controller } from '@nestjs/common';
+import { Crud, CrudController } from '@nestjsx/crud';
+
 import { Material } from './material.entity';
-import { Controller, Get } from '@nestjs/common';
-import {
-  CreateManyDto,
-  Crud,
-  CrudController,
-  CrudRequest,
-  Override,
-  ParsedBody,
-  ParsedRequest,
-} from '@nestjsx/crud';
-import { ApiOperation, ApiTags, ApiResponse } from '@nestjs/swagger';
+import { MaterialService } from './material.service';
 
 @Crud({
   model: {

@@ -1,18 +1,19 @@
-import { Transaction } from '../../../models/transaction.entity';
 import {
   Entity,
-  PrimaryGeneratedColumn,
   Column,
+  OneToOne,
   ManyToOne,
   OneToMany,
-  OneToOne,
   JoinColumn,
+  PrimaryGeneratedColumn,
 } from 'typeorm';
-import { Endowment } from '../../../models/endowment.entity';
-import { Equipment } from '../equipment/equipment.entity';
-import { Material } from '../material/material.entity';
-import { Modulo } from '../module/module.entity';
+
+import { Endowment } from './endowment.entity';
 import { PlaceType } from './place_type.entity';
+import { Modulo } from '../module/module.entity';
+import { Transaction } from './transaction.entity';
+import { Material } from '../material/material.entity';
+import { Equipment } from '../equipment/equipment.entity';
 @Entity()
 export class Place {
   @PrimaryGeneratedColumn() id: number;

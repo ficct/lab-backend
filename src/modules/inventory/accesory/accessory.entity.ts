@@ -1,5 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
+
 import { Equipment } from '../equipment/equipment.entity';
+
 @Entity()
 export class Accessory {
   @PrimaryGeneratedColumn() id: number;

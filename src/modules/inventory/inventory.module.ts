@@ -1,82 +1,112 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
-import { University } from 'src/modules/inventory/university/university.entity';
+import { University } from './university/university.entity';
 import { UniversityService } from './university/university.service';
 import { UniversityController } from './university/university.controller';
 
+import { Career } from './career/career.entity';
+import { CareerService } from './career/career.service';
 import { CareerController } from './career/career.controller';
 
-import { Faculty } from 'src/modules/inventory/faculty/faculty.entity';
-import { FacultyService } from 'src/modules/inventory/faculty/faculty.service';
+import { Faculty } from './faculty/faculty.entity';
+import { FacultyService } from './faculty/faculty.service';
 import { FacultyController } from './faculty/faculty.controller';
 
 import { Material } from './material/material.entity';
 import { MaterialService } from './material/material.service';
 import { MaterialController } from './material/material.controller';
 
-import { Modulo } from 'src/modules/inventory/module/module.entity';
+import { Modulo } from './module/module.entity';
 import { ModuleService } from './module/module.service';
-import { ModuleController } from 'src/modules/inventory/module/module.controller';
+import { ModuleController } from './module/module.controller';
 
-import { Type } from './../../models/type.entity';
-import { PlaceType } from 'src/modules/inventory/place/place_type.entity';
-import { Endowment } from './../../models/endowment.entity';
-import { EndowmentDetail } from './../../models/endowment_detail.entity';
+import { Place } from './place/place.entity';
+import { PlaceType } from './place/place_type.entity';
 
-import { Place } from 'src/modules/inventory/place/place.entity';
-import { PlaceService } from 'src/modules/inventory/place/place.service';
-import { PlaceController } from 'src/modules/inventory/place/place.controller';
+import { PlaceService } from './place/place.service';
+import { PlaceController } from './place/place.controller';
 
-import { Accessory } from 'src/modules/inventory/accesory/accessory.entity';
-import { AccessoryService } from 'src/modules/inventory/accesory/accessory.service';
-import { AccessoryController } from 'src/modules/inventory/accesory/accessory.controller';
+import { Accessory } from './accesory/accessory.entity';
+import { AccessoryStatus } from './accesory/accessory_status.entity';
 
-import { Equipment } from 'src/modules/inventory/equipment/equipment.entity';
-import { EquipmentService } from 'src/modules/inventory/equipment/equipment.service';
-import { EquipmentController } from 'src/modules/inventory/equipment/equipment.controller';
+import { AccessoryService } from './accesory/accessory.service';
+import { AccessoryController } from './accesory/accessory.controller';
 
-import { Report } from 'src/modules/inventory/report/report.entity';
-import { ReportService } from 'src/modules/inventory/report/report.service';
-import { ReportController } from 'src/modules/inventory/report/report.controller';
+import { Equipment } from './equipment/equipment.entity';
+import { Allocation } from './equipment/allocation.entity';
+import { EquipmentStatus } from './equipment/equipment._status.entity';
+
+import { EquipmentService } from './equipment/equipment.service';
+import { EquipmentController } from './equipment/equipment.controller';
+
+import { Report } from './report/report.entity';
+import { ReportService } from './report/report.service';
+import { ReportController } from './report/report.controller';
+
+import { Endowment } from './place/endowment.entity';
+import { EndowmentDetail } from './place/endowment_detail.entity';
+
+// OPERATING SYSTEMS - IMAGES
+import { Image } from './place/os/image.entity';
+import { Program } from './place/os/program.entity';
+import { Partition } from './place/os/partition.entity';
+import { OperatingSystem } from './place/os/operating_system.entity';
 
 @Module({
   imports: [
     TypeOrmModule.forFeature([
-      Equipment,
-      Place,
-      Accessory,
-      PlaceType,
+      Image,
+      Program,
+      Partition,
+      OperatingSystem,
+
+      Career,
+      Report,
+
       Endowment,
       EndowmentDetail,
-      Type,
+
       Material,
-      University,
-      Faculty,
-      Report,
+      Accessory,
+      AccessoryStatus,
+
+      Equipment,
+      Allocation,
+      EquipmentStatus,
+
+      Place,
+      PlaceType,
       Modulo,
+      Faculty,
+      University,
     ]),
   ],
   controllers: [
-    MaterialController,
-    ReportController,
     CareerController,
-    AccessoryController,
+    ReportController,
+
+    MaterialController,
     EquipmentController,
+    AccessoryController,
+
     PlaceController,
     ModuleController,
     FacultyController,
     UniversityController,
   ],
   providers: [
-    EquipmentService,
-    PlaceService,
-    MaterialService,
-    AccessoryService,
-    FacultyService,
+    CareerService,
     ReportService,
-    UniversityService,
+
+    MaterialService,
+    EquipmentService,
+    AccessoryService,
+
+    PlaceService,
+    FacultyService,
     ModuleService,
+    UniversityService,
   ],
 })
 export class InventoryModule {}
