@@ -1,5 +1,6 @@
 import { Entity, PrimaryGeneratedColumn } from 'typeorm';
+
 @Entity()
-export class Task {
+export class Offer {
   @PrimaryGeneratedColumn() id: number;
 }
