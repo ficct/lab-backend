@@ -27,11 +27,11 @@ import { PlaceType } from './place/place_type.entity';
 import { PlaceService } from './place/place.service';
 import { PlaceController } from './place/place.controller';
 
-import { Accessory } from './accesory/accessory.entity';
-import { AccessoryStatus } from './accesory/accessory_status.entity';
+import { Accessory } from './accessory/accessory.entity';
+import { AccessoryStatus } from './accessory/accessory_status.entity';
 
-import { AccessoryService } from './accesory/accessory.service';
-import { AccessoryController } from './accesory/accessory.controller';
+import { AccessoryService } from './accessory/accessory.service';
+import { AccessoryController } from './accessory/accessory.controller';
 
 import { Equipment } from './equipment/equipment.entity';
 import { Allocation } from './equipment/allocation.entity';

@@ -9,7 +9,7 @@ import {
 } from 'typeorm';
 
 import { Place } from '../place/place.entity';
-import { Accessory } from '../accesory/accessory.entity';
+import { Accessory } from '../accessory/accessory.entity';
 
 @Entity()
 export class Equipment {
