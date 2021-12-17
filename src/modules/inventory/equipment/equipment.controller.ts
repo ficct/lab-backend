@@ -21,7 +21,7 @@ import { Crud, CrudController } from '@nestjsx/crud';
 import { FileInterceptor } from '@nestjs/platform-express';
 
 import { Equipment } from './equipment.entity';
-import { FileDTO } from 'src/dtos/file_parse.dto';
+import { FileDTO } from 'src/modules/inventory/equipment/loads/file_parse.dto';
 
 import { PlaceService } from '../place/place.service';
 import { EquipmentService } from './equipment.service';

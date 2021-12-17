@@ -4,9 +4,9 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { TypeOrmCrudService } from '@nestjsx/crud-typeorm';
 
-import { Context } from 'src/loads/context';
-import { FileDTO } from 'src/dtos/file_parse.dto';
-import { LoadF08 } from 'src/loads/strategies/f08.load';
+import { Context } from 'src/modules/inventory/equipment/loads/context';
+import { FileDTO } from 'src/modules/inventory/equipment/loads/file_parse.dto';
+import { LoadF08 } from 'src/modules/inventory/equipment/loads/strategies/f08.load';
 
 import { Place } from '../place/place.entity';
 import { Equipment } from './equipment.entity';

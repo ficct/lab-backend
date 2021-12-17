@@ -1,4 +1,4 @@
-import { FileDTO } from './../dtos/file_parse.dto';
+import { FileDTO } from './file_parse.dto';
 import { Strategy } from './strategy';
 
 export class Context {

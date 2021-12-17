@@ -1,4 +1,4 @@
-import { FileDTO } from 'src/dtos/file_parse.dto';
+import { FileDTO } from 'src/modules/inventory/equipment/loads/file_parse.dto';
 import { Strategy } from '../strategy';
 
 export class LoadF08 implements Strategy {
