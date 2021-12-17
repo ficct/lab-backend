@@ -5,7 +5,9 @@ import {
   ManyToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
+
 import { Permission } from '../permission/permission.entity';
+
 @Entity()
 export class Role {
   @PrimaryGeneratedColumn() id: number;

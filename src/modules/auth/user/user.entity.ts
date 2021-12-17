@@ -1,13 +1,15 @@
-import { Transaction } from '../../../models/transaction.entity';
 import {
   Entity,
-  PrimaryGeneratedColumn,
   Column,
   ManyToMany,
   JoinTable,
   OneToMany,
+  PrimaryGeneratedColumn,
 } from 'typeorm';
+
 import { Role } from '../role/role.entity';
+import { Transaction } from 'src/modules/inventory/place/transaction.entity';
+
 @Entity()
 export class User {
   @PrimaryGeneratedColumn() id: number;

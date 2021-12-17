@@ -1,11 +1,17 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
-import { User } from 'src/modules/auth/user/user.entity';
-import { Role } from 'src/modules/auth/role/role.entity';
-import { Permission } from 'src/modules/auth/permission/permission.entity';
+import { User } from './user/user.entity';
+import { Role } from './role/role.entity';
+import { Kardex } from './user/kardex.entity';
+import { Permission } from './permission/permission.entity';
+
+import { InventoryModule } from '../inventory/inventory.module';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([User, Role, Permission])],
+  imports: [
+    InventoryModule,
+    TypeOrmModule.forFeature([User, Role, Permission, Kardex]),
+  ],
 })
 export class AuthModule {}
