@@ -9,6 +9,7 @@ import {
 } from 'typeorm';
 
 import { Place } from '../place/place.entity';
+import { Allocation } from './allocation.entity';
 import { Accessory } from '../accessory/accessory.entity';
 
 @Entity()
@@ -47,4 +48,7 @@ export class Equipment {
 
   @OneToMany(() => Accessory, (accessory) => accessory.equipment)
   accesories: Accessory[];
+
+  @ManyToOne(() => Allocation, (allocation) => allocation.equipments)
+  allocation: Allocation;
 }

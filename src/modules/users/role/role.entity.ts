@@ -13,7 +13,7 @@ export class Role {
   @PrimaryGeneratedColumn() id: number;
   @Column({ type: 'varchar' }) name: string;
 
-  @ManyToMany(() => Permission)
+  @ManyToMany(() => Permission, { cascade: true })
   @JoinTable()
   permissions: Permission[];
 }

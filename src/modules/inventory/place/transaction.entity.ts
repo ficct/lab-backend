@@ -8,7 +8,7 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import { Place } from './place.entity';
-import { User } from '../../auth/user/user.entity';
+import { User } from '../../users/user/user.entity';
 @Entity()
 export class Transaction {
   @PrimaryGeneratedColumn() id: number;

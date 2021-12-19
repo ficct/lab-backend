@@ -4,4 +4,5 @@ import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 export class Permission {
   @PrimaryGeneratedColumn() id: number;
   @Column({ type: 'varchar' }) name: string;
+  @Column({ type: 'varchar' }) detail: string;
 }

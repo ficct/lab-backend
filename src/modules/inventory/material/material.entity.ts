@@ -1,6 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
 
 import { Place } from '../place/place.entity';
+import { Allocation } from '../equipment/allocation.entity';
 
 @Entity()
 export class Material {
@@ -14,4 +15,7 @@ export class Material {
   // RELATIONS:
   @ManyToOne(() => Place, (place) => place.materials)
   place: Place;
+
+  @ManyToOne(() => Allocation, (allocation) => allocation.materials)
+  allocation: Allocation;
 }

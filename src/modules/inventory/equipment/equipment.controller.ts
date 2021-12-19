@@ -21,10 +21,10 @@ import { Crud, CrudController } from '@nestjsx/crud';
 import { FileInterceptor } from '@nestjs/platform-express';
 
 import { Equipment } from './equipment.entity';
-import { FileDTO } from 'src/modules/inventory/equipment/loads/file_parse.dto';
-
 import { PlaceService } from '../place/place.service';
 import { EquipmentService } from './equipment.service';
+
+import { FileDTO } from 'src/modules/inventory/equipment/loads/file_parse.dto';
 
 @Crud({
   model: {
@@ -32,6 +32,7 @@ import { EquipmentService } from './equipment.service';
   },
 })
 @ApiTags('Equipment')
+//@UseGuards(AuthGuard('jwt'))
 @Controller('equipments')
 export class EquipmentController implements CrudController<Equipment> {
   constructor(
@@ -75,6 +76,6 @@ export class EquipmentController implements CrudController<Equipment> {
   @UseInterceptors(FileInterceptor('file'))
   async returnLoad(@UploadedFile() file: Express.Multer.File): Promise<any> {
     const parsed_file: FileDTO[] = xlsx.parse(file.buffer);
-    return parsed_file;
+    return this.service.generateLoads(parsed_file);
   }
 }

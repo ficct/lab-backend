@@ -1,6 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
 
 import { Equipment } from '../equipment/equipment.entity';
+import { Allocation } from '../equipment/allocation.entity';
 
 @Entity()
 export class Accessory {
@@ -11,5 +12,9 @@ export class Accessory {
 
   // RELATIONS:
   @ManyToOne(() => Equipment, (equipment) => equipment.accesories)
+  @ManyToOne(() => Equipment, (equipment) => equipment.accesories)
   equipment: Equipment;
+
+  @ManyToOne(() => Allocation, (allocation) => allocation.accesories)
+  allocation: Allocation;
 }

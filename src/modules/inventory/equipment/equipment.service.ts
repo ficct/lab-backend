@@ -4,6 +4,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { TypeOrmCrudService } from '@nestjsx/crud-typeorm';
 
+import { LoadClientF08 } from './loads/strategies/f08Client.load';
 import { Context } from 'src/modules/inventory/equipment/loads/context';
 import { FileDTO } from 'src/modules/inventory/equipment/loads/file_parse.dto';
 import { LoadF08 } from 'src/modules/inventory/equipment/loads/strategies/f08.load';
@@ -18,6 +19,12 @@ export class EquipmentService extends TypeOrmCrudService<Equipment> {
     @InjectRepository(Place) public placeRepository: Repository<Place>,
   ) {
     super(repo);
+  }
+
+  generateLoads(parsed_file: FileDTO[]): any {
+    const context = new Context(new LoadClientF08());
+    const bulk = context.generateBulk(parsed_file);
+    return bulk;
   }
 
   uploadLoads(parsed_file: FileDTO[], id: string): Promise<Equipment[]> {
