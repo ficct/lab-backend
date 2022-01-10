@@ -26,16 +26,16 @@ export class Place {
   name: string;
 
   @Column('varchar', { name: 'description', nullable: true, length: 255 })
-  description: string | null;
+  description?: string;
 
   @Column('int', { name: 'Typeid' })
   typeid: number;
 
   @Column('varchar', { name: 'photoUrl', nullable: true, length: 255 })
-  photoUrl: string | null;
+  photoUrl?: string;
 
   @Column('varchar', { name: 'photo_id', nullable: true, length: 255 })
-  photoId: string | null;
+  photoId?: string;
 
   @OneToMany(() => Movement, (movement) => movement.placeTo)
   movements: Movement[];
