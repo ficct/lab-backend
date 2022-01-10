@@ -6,8 +6,8 @@
     "port": 3306,
     "username": "root",
     "password": "",
-    "database": "",
+    "database": "ficct",
     "synchronize": false,
-    "entities": ["entities/*.js"]
+    "entities": ["dist/entities/*.js"]
   }
 ]
