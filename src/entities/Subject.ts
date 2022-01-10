@@ -1,11 +1,17 @@
-import { Column, Entity, Index, OneToMany } from 'typeorm';
+import {
+  Column,
+  Entity,
+  Index,
+  OneToMany,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 import { Requirement } from './Requirement';
 import { SubjectCareer } from './SubjectCareer';
 
 @Index('code', ['code'], { unique: true })
 @Entity('Subject', { schema: 'ficct' })
 export class Subject {
-  @Column('int', { primary: true, name: 'id' })
+  @PrimaryGeneratedColumn({ type: 'int', name: 'id' })
   id: number;
 
   @Column('varchar', { name: 'code', unique: true, length: 10 })

@@ -1,10 +1,16 @@
-import { Column, Entity, Index, OneToMany } from 'typeorm';
+import {
+  Column,
+  Entity,
+  Index,
+  OneToMany,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 import { SubjectCareer } from './SubjectCareer';
 
 @Index('code', ['code'], { unique: true })
 @Entity('Career', { schema: 'ficct' })
 export class Career {
-  @Column('int', { primary: true, name: 'id' })
+  @PrimaryGeneratedColumn({ type: 'int', name: 'id' })
   id: number;
 
   @Column('date', { name: 'creationDate' })
@@ -38,16 +44,16 @@ export class Career {
   email: string;
 
   @Column('varchar', { name: 'blog', nullable: true, length: 255 })
-  blog?: string;
+  blog: string | null;
 
   @Column('varchar', { name: 'location', nullable: true, length: 255 })
-  location?: string;
+  location: string | null;
 
   @Column('varchar', { name: 'web', nullable: true, length: 255 })
-  web?: string;
+  web: string | null;
 
   @Column('int', { name: 'Placeid', nullable: true })
-  placeid?: number;
+  placeid: number | null;
 
   @OneToMany(() => SubjectCareer, (subjectCareer) => subjectCareer.career)
   subjectCareers: SubjectCareer[];

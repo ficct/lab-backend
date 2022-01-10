@@ -1,9 +1,9 @@
-import { Column, Entity, Index } from 'typeorm';
+import { Column, Entity, Index, PrimaryGeneratedColumn } from 'typeorm';
 
 @Index('name', ['name'], { unique: true })
 @Entity('Role', { schema: 'ficct' })
 export class Role {
-  @Column('int', { primary: true, name: 'id' })
+  @PrimaryGeneratedColumn({ type: 'int', name: 'id' })
   id: number;
 
   @Column('varchar', { name: 'name', unique: true, length: 255 })

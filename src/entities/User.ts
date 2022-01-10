@@ -1,4 +1,10 @@
-import { Column, Entity, Index, OneToMany } from 'typeorm';
+import {
+  Column,
+  Entity,
+  Index,
+  OneToMany,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 import { UserPlace } from './UserPlace';
 import { UserTask } from './UserTask';
 
@@ -7,7 +13,7 @@ import { UserTask } from './UserTask';
 @Index('verifiedEmail', ['verifiedEmail'], { unique: true })
 @Entity('User', { schema: 'ficct' })
 export class User {
-  @Column('int', { primary: true, name: 'id' })
+  @PrimaryGeneratedColumn({ type: 'int', name: 'id' })
   id: number;
 
   @Column('varchar', { name: 'uid', nullable: true, unique: true, length: 50 })

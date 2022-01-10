@@ -1,11 +1,18 @@
-import { Column, Entity, Index, JoinColumn, ManyToOne } from 'typeorm';
+import {
+  Column,
+  Entity,
+  Index,
+  JoinColumn,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 import { Subject } from './Subject';
 
-@Index('FKRequiremen227209', ['subjectReqId'], {})
 @Index('FKRequiremen264442', ['subjectPreqId'], {})
+@Index('FKRequiremen227209', ['subjectReqId'], {})
 @Entity('Requirement', { schema: 'ficct' })
 export class Requirement {
-  @Column('int', { primary: true, name: 'id' })
+  @PrimaryGeneratedColumn({ type: 'int', name: 'id' })
   id: number;
 
   @Column('int', { name: 'subjectReqId' })

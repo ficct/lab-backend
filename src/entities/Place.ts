@@ -5,6 +5,7 @@ import {
   JoinColumn,
   ManyToOne,
   OneToMany,
+  PrimaryGeneratedColumn,
 } from 'typeorm';
 import { Movement } from './Movement';
 import { PlaceType } from './PlaceType';
@@ -15,7 +16,7 @@ import { UserPlace } from './UserPlace';
 @Index('FKPlace446570', ['typeid'], {})
 @Entity('Place', { schema: 'ficct' })
 export class Place {
-  @Column('int', { primary: true, name: 'id' })
+  @PrimaryGeneratedColumn({ type: 'int', name: 'id' })
   id: number;
 
   @Column('varchar', { name: 'code', unique: true, length: 20 })

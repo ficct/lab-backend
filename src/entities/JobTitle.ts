@@ -5,12 +5,13 @@ import {
   JoinColumn,
   ManyToOne,
   OneToMany,
+  PrimaryGeneratedColumn,
 } from 'typeorm';
 
 @Index('FKJobTitle642966', ['supJobTitleId'], {})
 @Entity('JobTitle', { schema: 'ficct' })
 export class JobTitle {
-  @Column('int', { primary: true, name: 'id' })
+  @PrimaryGeneratedColumn({ type: 'int', name: 'id' })
   id: number;
 
   @Column('varchar', { name: 'name', length: 100 })

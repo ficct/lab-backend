@@ -5,6 +5,7 @@ import {
   JoinColumn,
   ManyToOne,
   OneToMany,
+  PrimaryGeneratedColumn,
 } from 'typeorm';
 import { EquipmentType } from './EquipmentType';
 import { EquipmentUnit } from './EquipmentUnit';
@@ -13,11 +14,11 @@ import { Movement } from './Movement';
 
 @Index('code', ['code'], { unique: true })
 @Index('FKEquipment753314', ['equipmentTypeid'], {})
-@Index('FKEquipment921418', ['unitid'], {})
 @Index('FKEquipment950424', ['equipmentBrandid'], {})
+@Index('FKEquipment921418', ['unitid'], {})
 @Entity('Equipment', { schema: 'ficct' })
 export class Equipment {
-  @Column('int', { primary: true, name: 'id' })
+  @PrimaryGeneratedColumn({ type: 'int', name: 'id' })
   id: number;
 
   @Column('text', { name: 'description' })
@@ -27,19 +28,19 @@ export class Equipment {
   code: string;
 
   @Column('varchar', { name: 'photoUrl', nullable: true, length: 255 })
-  photoUrl?: string;
+  photoUrl: string | null;
 
   @Column('varchar', { name: 'state', length: 50 })
   state: string;
 
   @Column('text', { name: 'observations', nullable: true })
-  observations?: string;
+  observations: string | null;
 
   @Column('int', { name: 'Unitid' })
   unitid: number;
 
   @Column('int', { name: 'Placeid', nullable: true })
-  placeid?: number;
+  placeid: number | null;
 
   @Column('int', { name: 'EquipmentBrandid' })
   equipmentBrandid: number;
@@ -48,7 +49,7 @@ export class Equipment {
   equipmentTypeid: number;
 
   @Column('varchar', { name: 'photo_id', nullable: true, length: 255 })
-  photoId?: string;
+  photoId: string | null;
 
   @ManyToOne(() => EquipmentType, (equipmentType) => equipmentType.equipment, {
     onDelete: 'NO ACTION',

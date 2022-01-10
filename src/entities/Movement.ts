@@ -1,15 +1,22 @@
-import { Column, Entity, Index, JoinColumn, ManyToOne } from 'typeorm';
+import {
+  Column,
+  Entity,
+  Index,
+  JoinColumn,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 import { MovementReason } from './MovementReason';
 import { Place } from './Place';
 import { Equipment } from './Equipment';
 
 @Index('FKMovement111260', ['reasonid'], {})
 @Index('FKMovement114181', ['placeToId'], {})
-@Index('FKMovement329029', ['equipmentid'], {})
 @Index('FKMovement513408', ['placeFromId'], {})
+@Index('FKMovement329029', ['equipmentid'], {})
 @Entity('Movement', { schema: 'ficct' })
 export class Movement {
-  @Column('int', { primary: true, name: 'id' })
+  @PrimaryGeneratedColumn({ type: 'int', name: 'id' })
   id: number;
 
   @Column('int', { name: 'Reasonid' })

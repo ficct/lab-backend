@@ -1,10 +1,16 @@
-import { Column, Entity, Index, OneToMany } from 'typeorm';
+import {
+  Column,
+  Entity,
+  Index,
+  OneToMany,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 import { Equipment } from './Equipment';
 
 @Index('name', ['name'], { unique: true })
 @Entity('EquipmentType', { schema: 'ficct' })
 export class EquipmentType {
-  @Column('int', { primary: true, name: 'id' })
+  @PrimaryGeneratedColumn({ type: 'int', name: 'id' })
   id: number;
 
   @Column('varchar', { name: 'name', unique: true, length: 50 })
