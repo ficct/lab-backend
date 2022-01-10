@@ -1,3 +1,4 @@
+import { ApiTags } from '@nestjs/swagger';
 import { Controller } from '@nestjs/common';
 import { Crud, CrudController } from '@nestjsx/crud';
 
@@ -7,6 +8,7 @@ import { EquipmentBrandService } from './equipment-brand.service';
 @Crud({
   model: { type: EquipmentBrand },
 })
+@ApiTags('equipment-brands')
 @Controller('equipment-brands')
 export class EquipmentBrandController
   implements CrudController<EquipmentBrand>

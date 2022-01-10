@@ -1,3 +1,4 @@
+import { ApiTags } from '@nestjs/swagger';
 import { Controller } from '@nestjs/common';
 import { Crud, CrudController } from '@nestjsx/crud';
 
@@ -7,7 +8,8 @@ import { PlaceTypeService } from './place-type.service';
 @Crud({
   model: { type: PlaceType },
 })
-@Controller('place-type')
+@ApiTags('place-type')
+@Controller('place-types')
 export class PlaceTypeController implements CrudController<PlaceType> {
   constructor(public service: PlaceTypeService) {}
 }
