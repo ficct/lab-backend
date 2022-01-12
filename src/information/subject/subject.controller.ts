@@ -2,7 +2,7 @@ import { Response } from 'express';
 
 import { ApiTags } from '@nestjs/swagger';
 import { Crud, CrudController } from '@nestjsx/crud';
-import { Controller, Get, HttpStatus, Param, Query, Res } from '@nestjs/common';
+import { Controller, Get, HttpStatus, Query, Res } from '@nestjs/common';
 
 import { Subject } from 'entities/Subject';
 import { SubjectService } from './subject.service';
@@ -36,17 +36,5 @@ export class SubjectController implements CrudController<Subject> {
       console.error(err);
     }
     return res.status(HttpStatus.NO_CONTENT).send([]);
-  }
-
-  @Get('/:id')
-  async findOne(@Param('id') id: number, @Res() res: Response<Subject>) {
-    try {
-      return res
-        .status(HttpStatus.ACCEPTED)
-        .send(await this.service.getOneSubjectWithRelations(id));
-    } catch (err) {
-      console.error(err);
-    }
-    return res.status(HttpStatus.NO_CONTENT).send(null);
   }
 }

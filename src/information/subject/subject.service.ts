@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { CrudRequest } from '@nestjsx/crud';
 import { InjectRepository } from '@nestjs/typeorm';
 import { TypeOrmCrudService } from '@nestjsx/crud-typeorm';
 
@@ -40,10 +41,11 @@ export class SubjectService extends TypeOrmCrudService<Subject> {
     });
   }
 
-  async getOneSubjectWithRelations(id: number): Promise<Subject> {
-    return await this.repo.findOne({
-      where: { id },
-      relations: ['requires', 'isRequiredBy', 'careers'],
+  getOne(req: CrudRequest): Promise<Subject> {
+    const [paramId] = req.parsed.paramsFilter;
+
+    return this.repo.findOne(paramId.value, {
+      relations: ['requires', 'isRequiredBy'],
     });
   }
 }
