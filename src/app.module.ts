@@ -5,6 +5,7 @@ import { AppService } from './app.service';
 import { AppController } from './app.controller';
 
 import { InventoryModule } from './inventory/inventory.module';
+import { InformationModule } from './information/information.module';
 
 @Module({
   imports: [
@@ -12,6 +13,7 @@ import { InventoryModule } from './inventory/inventory.module';
       autoLoadEntities: true,
     }),
     InventoryModule,
+    InformationModule,
   ],
   controllers: [AppController],
   providers: [AppService],
