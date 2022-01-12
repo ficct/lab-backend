@@ -1,9 +1,11 @@
-import { ApiTags } from '@nestjs/swagger';
-import { Controller } from '@nestjs/common';
-import { Crud, CrudController } from '@nestjsx/crud';
+import { Response } from 'express';
 
-import { SubjectService } from './subject.service';
+import { ApiTags } from '@nestjs/swagger';
+import { Crud, CrudController } from '@nestjsx/crud';
+import { Controller, Get, HttpStatus, Param, Query, Res } from '@nestjs/common';
+
 import { Subject } from 'entities/Subject';
+import { SubjectService } from './subject.service';
 
 @Crud({
   model: { type: Subject },
@@ -12,4 +14,39 @@ import { Subject } from 'entities/Subject';
 @Controller('subjects')
 export class SubjectController implements CrudController<Subject> {
   constructor(public service: SubjectService) {}
+
+  @Get('/')
+  async findAll(@Query() query, @Res() res: Response<Subject[]>) {
+    let { semester, careerId } = query;
+    const { page = 0, limit = 5 } = query;
+
+    semester = Number.parseInt(semester);
+    careerId = Number.parseInt(careerId);
+
+    try {
+      const subjects = await this.service.getSubjectWithQuery({
+        page,
+        limit,
+        semester: isNaN(semester) ? null : semester,
+        careerId: isNaN(careerId) ? null : careerId,
+      });
+
+      return res.status(HttpStatus.ACCEPTED).send(subjects);
+    } catch (err) {
+      console.error(err);
+    }
+    return res.status(HttpStatus.NO_CONTENT).send([]);
+  }
+
+  @Get('/:id')
+  async findOne(@Param('id') id: number, @Res() res: Response<Subject>) {
+    try {
+      return res
+        .status(HttpStatus.ACCEPTED)
+        .send(await this.service.getOneSubjectWithRelations(id));
+    } catch (err) {
+      console.error(err);
+    }
+    return res.status(HttpStatus.NO_CONTENT).send(null);
+  }
 }
