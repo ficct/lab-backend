@@ -1,11 +1,14 @@
 import {
-  Column,
-  Entity,
   Index,
+  Entity,
+  Column,
+  JoinTable,
   OneToMany,
+  ManyToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-import { Requirement } from './Requirement';
+
+import { Career } from './Career';
 import { SubjectCareer } from './SubjectCareer';
 
 @Index('code', ['code'], { unique: true })
@@ -32,12 +35,30 @@ export class Subject {
   @Column('int', { name: 'CR' })
   cr: number;
 
-  @OneToMany(() => Requirement, (requirement) => requirement.subjectReq)
-  requirements: Requirement[];
+  @ManyToMany(() => Subject, { onDelete: 'NO ACTION', onUpdate: 'NO ACTION' })
+  @JoinTable({
+    name: 'Requirement',
+    joinColumn: { name: 'subjectReqId', referencedColumnName: 'id' },
+    inverseJoinColumn: { name: 'subjectPreqId', referencedColumnName: 'id' },
+  })
+  requires: Subject[];
 
-  @OneToMany(() => Requirement, (requirement) => requirement.subjectPreq)
-  requirements2: Requirement[];
+  @ManyToMany(() => Subject, { onDelete: 'NO ACTION', onUpdate: 'NO ACTION' })
+  @JoinTable({
+    name: 'Requirement',
+    joinColumn: { name: 'subjectPreqId', referencedColumnName: 'id' },
+    inverseJoinColumn: { name: 'subjectReqId', referencedColumnName: 'id' },
+  })
+  isRequiredBy: Subject[];
+
+  @ManyToMany(() => Career, { onDelete: 'NO ACTION', onUpdate: 'NO ACTION' })
+  @JoinTable({
+    name: 'Subject_Career',
+    joinColumn: { name: 'Subjectid', referencedColumnName: 'id' },
+    inverseJoinColumn: { name: 'Careerid', referencedColumnName: 'id' },
+  })
+  careers: Career[];
 
   @OneToMany(() => SubjectCareer, (subjectCareer) => subjectCareer.subject)
-  subjectCareers: SubjectCareer[];
+  subjectCareers: SubjectCareer;
 }
