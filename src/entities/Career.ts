@@ -2,10 +2,12 @@ import {
   Column,
   Entity,
   Index,
-  OneToMany,
+  JoinTable,
+  ManyToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-import { SubjectCareer } from './SubjectCareer';
+
+import { Subject } from './Subject';
 
 @Index('code', ['code'], { unique: true })
 @Entity('Career', { schema: 'ficct' })
@@ -44,17 +46,22 @@ export class Career {
   email: string;
 
   @Column('varchar', { name: 'blog', nullable: true, length: 255 })
-  blog: string | null;
+  blog?: string;
 
   @Column('varchar', { name: 'location', nullable: true, length: 255 })
-  location: string | null;
+  location?: string;
 
   @Column('varchar', { name: 'web', nullable: true, length: 255 })
-  web: string | null;
+  web?: string;
 
   @Column('int', { name: 'Placeid', nullable: true })
-  placeid: number | null;
+  placeid?: number;
 
-  @OneToMany(() => SubjectCareer, (subjectCareer) => subjectCareer.career)
-  subjectCareers: SubjectCareer[];
+  @ManyToMany(() => Subject, { onDelete: 'NO ACTION', onUpdate: 'NO ACTION' })
+  @JoinTable({
+    name: 'Subject_Career',
+    joinColumn: { name: 'Careerid', referencedColumnName: 'id' },
+    inverseJoinColumn: { name: 'Subjectid', referencedColumnName: 'id' },
+  })
+  subjects: Subject[];
 }
