@@ -1,4 +1,5 @@
 import { Column, Entity, Index, JoinColumn, ManyToOne } from 'typeorm';
+
 import { User } from './User';
 import { Place } from './Place';
 
@@ -30,10 +31,6 @@ export class UserPlace {
   @JoinColumn([{ name: 'Userid', referencedColumnName: 'id' }])
   user: User;
 
-  @ManyToOne(() => Place, (place) => place.userPlaces, {
-    onDelete: 'NO ACTION',
-    onUpdate: 'NO ACTION',
-  })
   @JoinColumn([{ name: 'Placeid', referencedColumnName: 'id' }])
   place: Place;
 }

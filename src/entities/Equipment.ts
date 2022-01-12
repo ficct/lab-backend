@@ -2,15 +2,16 @@ import {
   Column,
   Entity,
   Index,
-  JoinColumn,
-  ManyToOne,
   OneToMany,
+  ManyToOne,
+  JoinColumn,
   PrimaryGeneratedColumn,
 } from 'typeorm';
+
+import { Movement } from './Movement';
 import { EquipmentType } from './EquipmentType';
 import { EquipmentUnit } from './EquipmentUnit';
 import { EquipmentBrand } from './EquipmentBrand';
-import { Movement } from './Movement';
 
 @Index('code', ['code'], { unique: true })
 @Index('FKEquipment753314', ['equipmentTypeid'], {})
@@ -28,19 +29,19 @@ export class Equipment {
   code: string;
 
   @Column('varchar', { name: 'photoUrl', nullable: true, length: 255 })
-  photoUrl: string | null;
+  photoUrl?: string;
 
   @Column('varchar', { name: 'state', length: 50 })
   state: string;
 
   @Column('text', { name: 'observations', nullable: true })
-  observations: string | null;
+  observations?: string;
 
   @Column('int', { name: 'Unitid' })
   unitid: number;
 
   @Column('int', { name: 'Placeid', nullable: true })
-  placeid: number | null;
+  placeid?: number;
 
   @Column('int', { name: 'EquipmentBrandid' })
   equipmentBrandid: number;
@@ -49,27 +50,26 @@ export class Equipment {
   equipmentTypeid: number;
 
   @Column('varchar', { name: 'photo_id', nullable: true, length: 255 })
-  photoId: string | null;
+  photoId?: string;
 
-  @ManyToOne(() => EquipmentType, (equipmentType) => equipmentType.equipment, {
-    onDelete: 'NO ACTION',
+  @ManyToOne(() => EquipmentType, (type) => type.equipment, {
     onUpdate: 'NO ACTION',
+    onDelete: 'NO ACTION',
   })
   @JoinColumn([{ name: 'EquipmentTypeid', referencedColumnName: 'id' }])
   equipmentType: EquipmentType;
 
-  @ManyToOne(() => EquipmentUnit, (equipmentUnit) => equipmentUnit.equipment, {
-    onDelete: 'NO ACTION',
+  @ManyToOne(() => EquipmentUnit, (unit) => unit.equipment, {
     onUpdate: 'NO ACTION',
+    onDelete: 'NO ACTION',
   })
   @JoinColumn([{ name: 'Unitid', referencedColumnName: 'id' }])
   unit: EquipmentUnit;
 
-  @ManyToOne(
-    () => EquipmentBrand,
-    (equipmentBrand) => equipmentBrand.equipment,
-    { onDelete: 'NO ACTION', onUpdate: 'NO ACTION' },
-  )
+  @ManyToOne(() => EquipmentBrand, (brand) => brand.equipment, {
+    onUpdate: 'NO ACTION',
+    onDelete: 'NO ACTION',
+  })
   @JoinColumn([{ name: 'EquipmentBrandid', referencedColumnName: 'id' }])
   equipmentBrand: EquipmentBrand;
 

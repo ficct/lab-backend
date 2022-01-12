@@ -1,10 +1,10 @@
 import {
-  Column,
-  Entity,
   Index,
-  JoinColumn,
-  ManyToOne,
+  Entity,
+  Column,
   OneToMany,
+  ManyToOne,
+  JoinColumn,
   PrimaryGeneratedColumn,
 } from 'typeorm';
 
@@ -18,18 +18,19 @@ export class JobTitle {
   name: string;
 
   @Column('text', { name: 'description', nullable: true })
-  description: string | null;
+  description?: string;
 
   @Column('int', { name: 'supJobTitleId', nullable: true })
-  supJobTitleId: number | null;
+  supJobTitleId?: number;
 
-  @ManyToOne(() => JobTitle, (jobTitle) => jobTitle.jobTitles, {
+  @ManyToOne(() => JobTitle, (jobTitle) => jobTitle.subJobs, {
     onDelete: 'NO ACTION',
     onUpdate: 'NO ACTION',
   })
-  @JoinColumn([{ name: 'supJobTitleId', referencedColumnName: 'id' }])
-  supJobTitle: JobTitle;
+  @JoinColumn({ name: 'supJobTitleId', referencedColumnName: 'id' })
+  supJob: JobTitle;
 
-  @OneToMany(() => JobTitle, (jobTitle) => jobTitle.supJobTitle)
-  jobTitles: JobTitle[];
+  @OneToMany(() => JobTitle, (jobTitle) => jobTitle.supJob)
+  @JoinColumn({ name: 'supJobTitleId', referencedColumnName: 'id' })
+  subJobs: JobTitle[];
 }

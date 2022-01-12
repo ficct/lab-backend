@@ -2,15 +2,16 @@ import {
   Column,
   Entity,
   Index,
-  JoinColumn,
+  JoinTable,
   ManyToOne,
   OneToMany,
+  JoinColumn,
+  ManyToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
+
 import { Movement } from './Movement';
 import { PlaceType } from './PlaceType';
-import { PlacePlace } from './PlacePlace';
-import { UserPlace } from './UserPlace';
 
 @Index('code', ['code'], { unique: true })
 @Index('FKPlace446570', ['typeid'], {})
@@ -50,12 +51,11 @@ export class Place {
   @JoinColumn([{ name: 'Typeid', referencedColumnName: 'id' }])
   type: PlaceType;
 
-  @OneToMany(() => PlacePlace, (placePlace) => placePlace.placeChild)
-  placePlaces: PlacePlace[];
-
-  @OneToMany(() => PlacePlace, (placePlace) => placePlace.placeParent)
-  placePlaces2: PlacePlace[];
-
-  @OneToMany(() => UserPlace, (userPlace) => userPlace.place)
-  userPlaces: UserPlace[];
+  @ManyToMany(() => Place, { onUpdate: 'NO ACTION', onDelete: 'NO ACTION' })
+  @JoinTable({
+    name: 'Place_Place',
+    joinColumn: { name: 'placeParent_id', referencedColumnName: 'id' },
+    inverseJoinColumn: { name: 'placeChild_id', referencedColumnName: 'id' },
+  })
+  places: Place[];
 }
