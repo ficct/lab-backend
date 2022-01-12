@@ -1,12 +1,4 @@
-import {
-  Column,
-  Entity,
-  Index,
-  JoinColumn,
-  ManyToOne,
-  PrimaryGeneratedColumn,
-} from 'typeorm';
-import { Subject } from './Subject';
+import { Column, Entity, Index, PrimaryGeneratedColumn } from 'typeorm';
 
 @Index('FKRequiremen264442', ['subjectPreqId'], {})
 @Index('FKRequiremen227209', ['subjectReqId'], {})
@@ -23,18 +15,4 @@ export class Requirement {
 
   @Column('int', { name: 'Careerid' })
   careerid: number;
-
-  @ManyToOne(() => Subject, (subject) => subject.requirements, {
-    onDelete: 'NO ACTION',
-    onUpdate: 'NO ACTION',
-  })
-  @JoinColumn([{ name: 'subjectReqId', referencedColumnName: 'id' }])
-  subjectReq: Subject;
-
-  @ManyToOne(() => Subject, (subject) => subject.requirements2, {
-    onDelete: 'NO ACTION',
-    onUpdate: 'NO ACTION',
-  })
-  @JoinColumn([{ name: 'subjectPreqId', referencedColumnName: 'id' }])
-  subjectPreq: Subject;
 }
