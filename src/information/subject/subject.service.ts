@@ -17,28 +17,33 @@ export class SubjectService extends TypeOrmCrudService<Subject> {
     super(repo);
   }
 
-  async getSubjectQuery(query: QuerySubjectOptions): Promise<Subject[]> {
+  async getSubjectWithQuery(query: QuerySubjectOptions): Promise<Subject[]> {
     const { limit, page, careerId, semester } = query;
-    console.log(query);
 
-    try {
-      if (careerId && semester) {
-        return await this.repo
-          .createQueryBuilder('s')
-          .distinct(true)
-          .innerJoin('s.Career', 'c')
-          .innerJoin('s.Subject_Career', 'sc')
-          .where('c.id = :careerID', { careerId })
-          .where('sc.semester = :semester', { semester })
-          .take(limit)
-          .skip(limit * page)
-          .getMany();
-      }
-
-      return await this.repo.find({ take: limit, skip: limit * page });
-    } catch (err) {
-      console.error(err);
+    if (careerId && semester) {
+      return this.repo
+        .createQueryBuilder('s')
+        .distinct(true)
+        .leftJoin('s.requires', 'requires')
+        .leftJoin('s.isRequiredBy', 'isRequiredBy')
+        .leftJoin('s.subjectCareers', 'sc')
+        .where(`sc.careerid = ${careerId}`)
+        .andWhere(`sc.semester = ${semester}`)
+        .take(limit)
+        .skip(limit * page)
+        .getMany();
     }
-    return [];
+
+    return this.repo.find({
+      take: limit,
+      skip: limit * page,
+    });
+  }
+
+  async getOneSubjectWithRelations(id: number): Promise<Subject> {
+    return await this.repo.findOne({
+      where: { id },
+      relations: ['requires', 'isRequiredBy', 'careers'],
+    });
   }
 }
