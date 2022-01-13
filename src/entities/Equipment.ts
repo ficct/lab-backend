@@ -1,16 +1,17 @@
 import {
+  Index,
   Column,
   Entity,
-  Index,
   OneToMany,
   ManyToOne,
   JoinColumn,
   PrimaryGeneratedColumn,
 } from 'typeorm';
 
+import { Place } from './Place';
 import { Movement } from './Movement';
-import { EquipmentType } from './EquipmentType';
 import { EquipmentUnit } from './EquipmentUnit';
+import { EquipmentType } from './EquipmentType';
 import { EquipmentBrand } from './EquipmentBrand';
 
 @Index('code', ['code'], { unique: true })
@@ -37,16 +38,16 @@ export class Equipment {
   @Column('text', { name: 'observations', nullable: true })
   observations?: string;
 
-  @Column('int', { name: 'Unitid' })
+  @Column('int', { name: 'Unitid', select: false })
   unitid: number;
 
-  @Column('int', { name: 'Placeid', nullable: true })
+  @Column('int', { name: 'Placeid', nullable: true, select: false })
   placeid?: number;
 
-  @Column('int', { name: 'EquipmentBrandid' })
+  @Column('int', { name: 'EquipmentBrandid', select: false })
   equipmentBrandid: number;
 
-  @Column('int', { name: 'EquipmentTypeid' })
+  @Column('int', { name: 'EquipmentTypeid', select: false })
   equipmentTypeid: number;
 
   @Column('varchar', { name: 'photo_id', nullable: true, length: 255 })
@@ -56,23 +57,27 @@ export class Equipment {
     onUpdate: 'NO ACTION',
     onDelete: 'NO ACTION',
   })
-  @JoinColumn([{ name: 'EquipmentTypeid', referencedColumnName: 'id' }])
+  @JoinColumn({ name: 'EquipmentTypeid', referencedColumnName: 'id' })
   equipmentType: EquipmentType;
 
   @ManyToOne(() => EquipmentUnit, (unit) => unit.equipment, {
     onUpdate: 'NO ACTION',
     onDelete: 'NO ACTION',
   })
-  @JoinColumn([{ name: 'Unitid', referencedColumnName: 'id' }])
+  @JoinColumn({ name: 'Unitid', referencedColumnName: 'id' })
   unit: EquipmentUnit;
 
   @ManyToOne(() => EquipmentBrand, (brand) => brand.equipment, {
     onUpdate: 'NO ACTION',
     onDelete: 'NO ACTION',
   })
-  @JoinColumn([{ name: 'EquipmentBrandid', referencedColumnName: 'id' }])
+  @JoinColumn({ name: 'EquipmentBrandid', referencedColumnName: 'id' })
   equipmentBrand: EquipmentBrand;
 
   @OneToMany(() => Movement, (movement) => movement.equipment)
   movements: Movement[];
+
+  @ManyToOne(() => Place, (place) => place.equipments)
+  @JoinColumn({ name: 'Placeid', referencedColumnName: 'id' })
+  place: Place;
 }
