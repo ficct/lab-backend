@@ -56,6 +56,8 @@ export class EquipmentService extends TypeOrmCrudService<Equipment> {
         'equipmentBrand',
         'place',
         'movements',
+        'movements.user',
+        'movements.user.role',
         'movements.reason',
         'movements.placeTo',
         'movements.placeFrom',
