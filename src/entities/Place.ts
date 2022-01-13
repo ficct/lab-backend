@@ -9,6 +9,7 @@ import {
   ManyToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
+import { Equipment } from './Equipment';
 
 import { Movement } from './Movement';
 import { PlaceType } from './PlaceType';
@@ -29,7 +30,7 @@ export class Place {
   @Column('varchar', { name: 'description', nullable: true, length: 255 })
   description?: string;
 
-  @Column('int', { name: 'Typeid' })
+  @Column('int', { name: 'Typeid', select: false })
   typeid: number;
 
   @Column('varchar', { name: 'photoUrl', nullable: true, length: 255 })
@@ -58,4 +59,7 @@ export class Place {
     inverseJoinColumn: { name: 'placeChild_id', referencedColumnName: 'id' },
   })
   places: Place[];
+
+  @OneToMany(() => Equipment, (equipment) => equipment.place)
+  equipments: Equipment[];
 }

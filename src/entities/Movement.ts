@@ -6,9 +6,10 @@ import {
   ManyToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-import { MovementReason } from './MovementReason';
+
 import { Place } from './Place';
 import { Equipment } from './Equipment';
+import { MovementReason } from './MovementReason';
 
 @Index('FKMovement111260', ['reasonid'], {})
 @Index('FKMovement114181', ['placeToId'], {})
@@ -19,37 +20,37 @@ export class Movement {
   @PrimaryGeneratedColumn({ type: 'int', name: 'id' })
   id: number;
 
-  @Column('int', { name: 'Reasonid' })
+  @Column('int', { name: 'Reasonid', select: false })
   reasonid: number;
 
   @Column('text', { name: 'description', nullable: true })
-  description: string | null;
+  description?: string;
 
-  @Column('int', { name: 'Equipmentid' })
+  @Column('int', { name: 'Equipmentid', select: false })
   equipmentid: number;
 
-  @Column('int', { name: 'placeFrom_id', nullable: true })
-  placeFromId: number | null;
+  @Column('int', { name: 'placeFrom_id', nullable: true, select: false })
+  placeFromId?: number;
 
-  @Column('int', { name: 'placeTo_id', nullable: true })
-  placeToId: number | null;
+  @Column('int', { name: 'placeTo_id', nullable: true, select: false })
+  placeToId?: number;
 
-  @Column('int', { name: 'Userid', nullable: true })
-  userid: number | null;
+  @Column('int', { name: 'Userid', nullable: true, select: false })
+  userid?: number;
 
   @ManyToOne(
     () => MovementReason,
     (movementReason) => movementReason.movements,
     { onDelete: 'NO ACTION', onUpdate: 'NO ACTION' },
   )
-  @JoinColumn([{ name: 'Reasonid', referencedColumnName: 'id' }])
+  @JoinColumn({ name: 'Reasonid', referencedColumnName: 'id' })
   reason: MovementReason;
 
   @ManyToOne(() => Place, (place) => place.movements, {
     onDelete: 'NO ACTION',
     onUpdate: 'NO ACTION',
   })
-  @JoinColumn([{ name: 'placeTo_id', referencedColumnName: 'id' }])
+  @JoinColumn({ name: 'placeTo_id', referencedColumnName: 'id' })
   placeTo: Place;
 
   @ManyToOne(() => Equipment, (equipment) => equipment.movements, {
