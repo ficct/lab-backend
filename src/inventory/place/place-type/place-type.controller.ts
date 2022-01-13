@@ -7,6 +7,15 @@ import { PlaceTypeService } from './place-type.service';
 
 @Crud({
   model: { type: PlaceType },
+  routes: {
+    only: [
+      'getOneBase',
+      'getManyBase',
+      'createOneBase',
+      'updateOneBase',
+      'deleteOneBase',
+    ],
+  },
 })
 @ApiTags('place-type')
 @Controller('place-types')

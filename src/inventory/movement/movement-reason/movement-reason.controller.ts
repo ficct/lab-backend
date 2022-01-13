@@ -1,12 +1,21 @@
 import { ApiTags } from '@nestjs/swagger';
 import { Controller } from '@nestjs/common';
 import { Crud, CrudController } from '@nestjsx/crud';
-import { MovementReason } from 'entities/MovementReason';
 
+import { MovementReason } from 'entities/MovementReason';
 import { MovementReasonService } from './movement-reason.service';
 
 @Crud({
   model: { type: MovementReason },
+  routes: {
+    only: [
+      'getOneBase',
+      'getManyBase',
+      'createOneBase',
+      'updateOneBase',
+      'deleteOneBase',
+    ],
+  },
 })
 @ApiTags('movement-reasons')
 @Controller('movement-reasons')

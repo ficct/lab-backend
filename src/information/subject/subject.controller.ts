@@ -9,6 +9,15 @@ import { SubjectService } from './subject.service';
 
 @Crud({
   model: { type: Subject },
+  routes: {
+    only: [
+      'getOneBase',
+      'getManyBase',
+      'createOneBase',
+      'updateOneBase',
+      'deleteOneBase',
+    ],
+  },
 })
 @ApiTags('subjects')
 @Controller('subjects')

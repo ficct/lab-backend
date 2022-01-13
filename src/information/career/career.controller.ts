@@ -7,6 +7,15 @@ import { CareerService } from './career.service';
 
 @Crud({
   model: { type: Career },
+  routes: {
+    only: [
+      'getOneBase',
+      'getManyBase',
+      'createOneBase',
+      'updateOneBase',
+      'deleteOneBase',
+    ],
+  },
 })
 @ApiTags('careers')
 @Controller('careers')

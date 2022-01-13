@@ -7,6 +7,15 @@ import { JobTitle } from 'entities/JobTitle';
 
 @Crud({
   model: { type: JobTitle },
+  routes: {
+    only: [
+      'getOneBase',
+      'getManyBase',
+      'createOneBase',
+      'updateOneBase',
+      'deleteOneBase',
+    ],
+  },
 })
 @ApiTags('jobs')
 @Controller('jobs')

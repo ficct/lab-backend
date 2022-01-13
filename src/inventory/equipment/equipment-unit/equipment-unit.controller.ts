@@ -7,6 +7,15 @@ import { EquipmentUnitService } from './equipment-unit.service';
 
 @Crud({
   model: { type: EquipmentUnit },
+  routes: {
+    only: [
+      'getOneBase',
+      'getManyBase',
+      'createOneBase',
+      'updateOneBase',
+      'deleteOneBase',
+    ],
+  },
 })
 @ApiTags('equipment-units')
 @Controller('equipment-units')

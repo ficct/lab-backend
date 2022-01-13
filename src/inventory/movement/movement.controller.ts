@@ -7,6 +7,15 @@ import { MovementService } from './movement.service';
 
 @Crud({
   model: { type: Movement },
+  routes: {
+    only: [
+      'getOneBase',
+      'getManyBase',
+      'createOneBase',
+      'updateOneBase',
+      'deleteOneBase',
+    ],
+  },
 })
 @ApiTags('movements')
 @Controller('movements')
