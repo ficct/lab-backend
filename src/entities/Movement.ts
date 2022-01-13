@@ -7,6 +7,7 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm';
 
+import { User } from './User';
 import { Place } from './Place';
 import { Equipment } from './Equipment';
 import { MovementReason } from './MovementReason';
@@ -66,4 +67,8 @@ export class Movement {
   })
   @JoinColumn([{ name: 'placeFrom_id', referencedColumnName: 'id' }])
   placeFrom: Place;
+
+  @ManyToOne(() => User, (user) => user.movements)
+  @JoinColumn({ name: 'Userid', referencedColumnName: 'id' })
+  user: User;
 }
