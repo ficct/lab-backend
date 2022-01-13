@@ -1,5 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
+
+import { CrudRequest } from '@nestjsx/crud';
 import { TypeOrmCrudService } from '@nestjsx/crud-typeorm';
 
 import { Equipment } from 'entities/Equipment';
@@ -42,5 +44,22 @@ export class EquipmentService extends TypeOrmCrudService<Equipment> {
       .skip(limit * page)
       .take(limit)
       .getMany();
+  }
+
+  getOne(req: CrudRequest): Promise<Equipment> {
+    const [paramId] = req.parsed.paramsFilter;
+
+    return this.repo.findOne(paramId.value, {
+      relations: [
+        'unit',
+        'equipmentType',
+        'equipmentBrand',
+        'place',
+        'movements',
+        'movements.reason',
+        'movements.placeTo',
+        'movements.placeFrom',
+      ],
+    });
   }
 }
