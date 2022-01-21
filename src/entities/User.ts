@@ -1,16 +1,20 @@
+import bcrypt from 'bcrypt';
+
 import {
+  Index,
   Column,
   Entity,
-  Index,
-  JoinColumn,
   ManyToOne,
   OneToMany,
+  JoinColumn,
   PrimaryGeneratedColumn,
+  BeforeInsert,
 } from 'typeorm';
-import { Movement } from './Movement';
+
 import { Role } from './Role';
-import { UserPlace } from './UserPlace';
+import { Movement } from './Movement';
 import { UserTask } from './UserTask';
+import { UserPlace } from './UserPlace';
 
 @Index('uid', ['uid'], { unique: true })
 @Index('email', ['email'], { unique: true })
@@ -67,4 +71,13 @@ export class User {
   @ManyToOne(() => Role, (role) => role.users)
   @JoinColumn({ name: 'Roleid', referencedColumnName: 'id' })
   role: Role;
+
+  @BeforeInsert()
+  async hashPassword() {
+    this.password = await bcrypt.hash(this.password, 10);
+  }
+
+  checkPassword(password: string): Promise<boolean> {
+    return bcrypt.compare(password, this.password);
+  }
 }
