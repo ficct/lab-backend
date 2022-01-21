@@ -36,4 +36,6 @@ lerna-debug.log*
 
 # files
 *.sql
+.env
+swagger.json
 ormconfig.json
