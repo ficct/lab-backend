@@ -17,5 +17,6 @@ import { UserActionController } from './user-action/user-action.controller';
   imports: [TypeOrmModule.forFeature([User, Role, UserAction])],
   providers: [UserService, RoleService, UserActionService],
   controllers: [UserController, RoleController, UserActionController],
+  exports: [UserService],
 })
 export class UserModule {}
