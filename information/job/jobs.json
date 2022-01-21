@@ -1,0 +1,109 @@
+{
+    "job": {
+        "name": "DECANO",
+        "subJobs": [
+            { "name": "Asistente Administrativo" },
+            { "name": "Secretario General" },
+            { "name": "Asistente Juridico" },
+            { "name": "Apoyo Profesional" },
+            {
+                "name": "JAFF",
+                "subJobs": [
+                    {
+                        "name": "Analista Contador",
+                        "subJobs": [
+                            { "name": "Aux Contable" },
+                            { "name": "Responsable de Compra y Sumnistro" },
+                            {
+                                "name": "Responsable de Proyectos IDH",
+                                "subJobs": [{ "name": "Becas" }, { "name": "Becas" }]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Vice Decano",
+                "subJobs": [
+                    { "name": "Coordinador de bienestar social" },
+                    { "name": "Asistente Administrativo" },
+                    {
+                        "name": "CPD Facultativo",
+                        "subJobs": [{ "name": "Auxiliar Administrativo" }]
+                    },
+                    {
+                        "name": "Coord. Autoevaluacion y Acreditacion",
+                        "subJobs": [{ "name": "Resp. de Prog. Acred. y Autoevaluacion" }]
+                    },
+                    {
+                        "name": "Jefe de Dpto. Cs puras y TICs",
+                        "subJobs": [
+                            { "name": "Coord. Fisica" },
+                            { "name": "Coord. Matematicas" },
+                            { "name": "Coord. Programacion" },
+                            { "name": "Coord. Electronica" }
+                        ]
+                    },
+                    { "name": "Encargado Seg. Curricular" },
+                    {
+                        "name": "Dirección de Investigación",
+                        "subJobs": [{ "name": "Responsable de Programación" }]
+                    },
+                    {
+                        "name": "Dirección de Extensión",
+                        "subJobs": [{ "name": "Responsable de Programación de Extensión" }]
+                    },
+                    {
+                        "name": "Dirección de Postgrado",
+                        "subJobs": [
+                            { "name": "Portero Mensajero" },
+                            { "name": "Personal de Limpieza" },
+                            { "name": "Coordinador Académico" },
+                            { "name": "Coordinador Administrativo" }
+                        ]
+                    },
+                    {
+                        "name": "Consejo de Carrera Informática",
+                        "subJobs": [
+                            {
+                                "name": "Director de Carrera Informática",
+                                "subJobs": [
+                                    { "name": "Asistente Administrativo" },
+                                    { "name": "Encargado de Autoevaluación y Acreditación" },
+                                    { "name": "Becas" }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Consejo de Carrera Sistemas",
+                        "subJobs": [
+                            { "name": "Asistente Administrativo" },
+                            { "name": "Encargado de Autoevaluación y Acreditación" },
+                            { "name": "Becas" }
+                        ]
+                    },
+                    {
+                        "name": "Consejo de Carrera Redes y Telecomunicación",
+                        "subJobs": [
+                            {
+                                "name": "Director de Carrera Redes y Telecomunicación",
+                                "subJobs": [
+                                    { "name": "Asistente Administrativo" },
+                                    { "name": "Becas" }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Director de los Laboratorios en Cs. de la Computación y Telecomunicación",
+                        "subJobs": [
+                            { "name": "Auxiliar de Laboratorio" },
+                            { "name": "Auxiliar de Cátedra" }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
