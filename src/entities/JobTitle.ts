@@ -20,7 +20,7 @@ export class JobTitle {
   @Column('text', { name: 'description', nullable: true })
   description?: string;
 
-  @Column('int', { name: 'supJobTitleId', nullable: true })
+  @Column('int', { name: 'supJobTitleId', nullable: true, select: false })
   supJobTitleId?: number;
 
   @ManyToOne(() => JobTitle, (jobTitle) => jobTitle.subJobs, {
