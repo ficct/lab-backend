@@ -11,5 +11,6 @@ import { JobController } from './job.controller';
   imports: [TypeOrmModule.forFeature([JobTitle])],
   controllers: [JobController],
   providers: [JobService],
+  exports: [JobService],
 })
 export class JobModule {}

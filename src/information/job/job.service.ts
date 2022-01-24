@@ -32,7 +32,10 @@ export class JobService extends TypeOrmCrudService<JobTitle> {
 
   private async seedJobs(jobs: any[] = [], supJobTitleId?: number) {
     for (const { name, subJobs } of jobs) {
-      const job = await this.repo.create({ name, supJobTitleId });
+      const job = await this.repo.save(
+        this.repo.create({ name, supJobTitleId, description: name }),
+      );
+
       await this.seedJobs(subJobs, job.id);
     }
   }
@@ -40,7 +43,7 @@ export class JobService extends TypeOrmCrudService<JobTitle> {
   async seed() {
     try {
       const jobCount = await this.repo.count();
-      if (jobCount) {
+      if (!jobCount) {
         await this.seedJobs([job]);
       }
     } catch (err) {
