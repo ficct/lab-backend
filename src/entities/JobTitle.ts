@@ -30,7 +30,9 @@ export class JobTitle {
   @JoinColumn({ name: 'supJobTitleId', referencedColumnName: 'id' })
   supJob: JobTitle;
 
-  @OneToMany(() => JobTitle, (jobTitle) => jobTitle.supJob)
+  @OneToMany(() => JobTitle, (jobTitle) => jobTitle.supJob, {
+    cascade: true,
+  })
   @JoinColumn({ name: 'supJobTitleId', referencedColumnName: 'id' })
   subJobs: JobTitle[];
 }
