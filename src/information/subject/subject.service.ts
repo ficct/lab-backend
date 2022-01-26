@@ -125,7 +125,7 @@ export class SubjectService extends TypeOrmCrudService<Subject> {
 
   async seed(careers: Career[]) {
     const count = await this.repo.count();
-    if (count) {
+    if (!count) {
       await this.repo
         .createQueryBuilder()
         .insert()

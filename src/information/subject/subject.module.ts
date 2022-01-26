@@ -14,5 +14,6 @@ import { SubjectCareerService } from './subject-career/subject-career.service';
   imports: [TypeOrmModule.forFeature([Subject, Requirement, SubjectCareer])],
   controllers: [SubjectController],
   providers: [SubjectService, RequirementService, SubjectCareerService],
+  exports: [SubjectService, RequirementService, SubjectCareerService],
 })
 export class SubjectModule {}
