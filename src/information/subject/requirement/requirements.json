@@ -1,0 +1,399 @@
+[
+  {
+    "subjectCode": "MAT101",
+    "preReqs": ["MAT102"],
+    "careersCode": ["187-3", "187-4", "187-5"],
+    "semester": 1
+  },
+  {
+    "subjectCode": "INF119",
+    "preReqs": ["MAT103"],
+    "careersCode": ["187-3", "187-4", "187-5"],
+    "semester": 1
+  },
+  {
+    "subjectCode": "INF110",
+    "preReqs": ["INF120"],
+    "careersCode": ["187-3", "187-4", "187-5"],
+    "semester": 1
+  },
+  {
+    "subjectCode": "FIS100",
+    "preReqs": ["FIS102"],
+    "careersCode": ["187-3", "187-4", "187-5"],
+    "semester": 1
+  },
+  {
+    "subjectCode": "LIN100",
+    "preReqs": ["LIN101"],
+    "careersCode": ["187-3", "187-4", "187-5"],
+    "semester": 1
+  },
+
+  {
+    "subjectCode": "MAT102",
+    "preReqs": ["MAT207", "MAT202"],
+    "careersCode": ["187-3", "187-4", "187-5"],
+    "semester": 2
+  },
+  {
+    "subjectCode": "MAT103",
+    "preReqs": ["INF210"],
+    "careersCode": ["187-3", "187-4", "187-5"],
+    "semester": 2
+  },
+  {
+    "subjectCode": "INF120",
+    "preReqs": ["INF210", "INF211"],
+    "careersCode": ["187-3", "187-4", "187-5"],
+    "semester": 2
+  },
+  {
+    "subjectCode": "FIS102",
+    "preReqs": ["INF211", "FIS200"],
+    "careersCode": ["187-3", "187-4"],
+    "semester": 2
+  },
+  {
+    "subjectCode": "FIS102",
+    "preReqs": ["INF211", "RDS210", "ELT241"],
+    "careersCode": ["187-5"],
+    "semester": 2
+  },
+
+  {
+    "subjectCode": "INF211",
+    "preReqs": ["INF221"],
+    "careersCode": ["187-3", "187-4", "187-5"],
+    "semester": 3
+  },
+  {
+    "subjectCode": "INF210",
+    "preReqs": ["INF220"],
+    "careersCode": ["187-3", "187-4", "187-5"],
+    "semester": 3
+  },
+  {
+    "subjectCode": "MAT207",
+    "preReqs": ["MAT205"],
+    "careersCode": ["187-3", "187-4", "187-5"],
+    "semester": 3
+  },
+  {
+    "subjectCode": "ADM100",
+    "preReqs": ["ADM200"],
+    "careersCode": ["187-3", "187-4"],
+    "semester": 3
+  },
+  {
+    "subjectCode": "RDS210",
+    "preReqs": ["RDS220"],
+    "careersCode": ["187-5"],
+    "semester": 3
+  },
+  {
+    "subjectCode": "ELT241",
+    "preReqs": ["ELT354"],
+    "careersCode": ["187-5"],
+    "semester": 3
+  },
+
+  {
+    "subjectCode": "MAT202",
+    "preReqs": ["MAT302"],
+    "careersCode": ["187-3", "187-4", "187-5"],
+    "semester": 4
+  },
+  {
+    "subjectCode": "INF220",
+    "preReqs": ["INF312", "INF319", "INF318", "INF310"],
+    "careersCode": ["187-3"],
+    "semester": 4
+  },
+  {
+    "subjectCode": "ADM200",
+    "preReqs": ["EC0300", "ADM330"],
+    "careersCode": ["187-4"],
+    "semester": 4
+  },
+  {
+    "subjectCode": "INF220",
+    "preReqs": ["INF312", "INF310"],
+    "careersCode": ["187-4"],
+    "semester": 4
+  },
+  {
+    "subjectCode": "INF220",
+    "preReqs": ["INF312"],
+    "careersCode": ["187-5"],
+    "semester": 4
+  },
+  {
+    "subjectCode": "RDS220",
+    "preReqs": ["RDS310", "ELT352"],
+    "careersCode": ["187-5"],
+    "semester": 4
+  },
+
+  {
+    "subjectCode": "MAT302",
+    "preReqs": ["MAT329"],
+    "careersCode": ["187-3", "187-4", "187-5"],
+    "semester": 5
+  },
+  {
+    "subjectCode": "INF312",
+    "preReqs": ["INF322", "INF342"],
+    "careersCode": ["187-3", "187-4"],
+    "semester": 5
+  },
+  {
+    "subjectCode": "INF319",
+    "preReqs": ["INF329"],
+    "careersCode": ["187-3"],
+    "semester": 5
+  },
+  {
+    "subjectCode": "INF318",
+    "preReqs": ["INF418"],
+    "careersCode": ["187-3"],
+    "semester": 5
+  },
+  {
+    "subjectCode": "INF310",
+    "preReqs": ["INF323", "INF329", "INF418"],
+    "careersCode": ["187-3"],
+    "semester": 5
+  },
+  {
+    "subjectCode": "ADM330",
+    "preReqs": ["ADM320"],
+    "careersCode": ["187-4"],
+    "semester": 5
+  },
+  {
+    "subjectCode": "INF310",
+    "preReqs": ["INF323"],
+    "careersCode": ["187-4"],
+    "semester": 5
+  },
+  {
+    "subjectCode": "INF312",
+    "preReqs": ["INF322"],
+    "careersCode": ["187-5"],
+    "semester": 5
+  },
+  {
+    "subjectCode": "RDS310",
+    "preReqs": ["ADM320"],
+    "careersCode": ["187-5"],
+    "semester": 5
+  },
+  {
+    "subjectCode": "ELT352",
+    "preReqs": ["ELT362"],
+    "careersCode": ["187-5"],
+    "semester": 5
+  },
+  {
+    "subjectCode": "ELT354",
+    "preReqs": ["RDS320", "INF433", "ELT374"],
+    "careersCode": ["187-5"],
+    "semester": 5
+  },
+
+  {
+    "subjectCode": "INF323",
+    "preReqs": ["INF433", "INF413"],
+    "careersCode": ["187-3", "187-4", "187-5"],
+    "semester": 6
+  },
+  {
+    "subjectCode": "INF322",
+    "preReqs": ["INF412"],
+    "careersCode": ["187-3"],
+    "semester": 6
+  },
+  {
+    "subjectCode": "MAT329",
+    "preReqs": ["MAT419"],
+    "careersCode": ["187-3", "187-4", "187-5"],
+    "semester": 6
+  },
+  {
+    "subjectCode": "INF342",
+    "preReqs": ["INF412"],
+    "careersCode": ["187-3"],
+    "semester": 6
+  },
+  {
+    "subjectCode": "ADM320",
+    "preReqs": ["INF462"],
+    "careersCode": ["187-4"],
+    "semester": 6
+  },
+  {
+    "subjectCode": "INF342",
+    "preReqs": ["INF432", "INF412"],
+    "careersCode": ["187-4"],
+    "semester": 6
+  },
+  {
+    "subjectCode": "ELT362",
+    "preReqs": ["RDS410"],
+    "careersCode": ["187-5"],
+    "semester": 6
+  },
+  {
+    "subjectCode": "RDS320",
+    "preReqs": ["ELT374"],
+    "careersCode": ["187-5"],
+    "semester": 6
+  },
+
+  {
+    "subjectCode": "INF433",
+    "preReqs": ["INF423"],
+    "careersCode": ["187-3", "187-4"],
+    "semester": 7
+  },
+  {
+    "subjectCode": "MAT419",
+    "preReqs": ["ECO449"],
+    "careersCode": ["187-3", "187-4", "187-5"],
+    "semester": 7
+  },
+  {
+    "subjectCode": "INF418",
+    "preReqs": ["INF428"],
+    "careersCode": ["187-3"],
+    "semester": 7
+  },
+  {
+    "subjectCode": "INF412",
+    "preReqs": ["INF428", "INF422", "INF442"],
+    "careersCode": ["187-3"],
+    "semester": 7
+  },
+  {
+    "subjectCode": "ELT374",
+    "preReqs": ["RDS429", "ELT384"],
+    "careersCode": ["187-5"],
+    "semester": 7
+  },
+  {
+    "subjectCode": "INF412",
+    "preReqs": ["INF462", "INF422", "INF442"],
+    "careersCode": ["187-5"],
+    "semester": 7
+  },
+  {
+    "subjectCode": "INF433",
+    "preReqs": ["INF423", "RDS421", "RDS429"],
+    "careersCode": ["187-5"],
+    "semester": 7
+  },
+
+  {
+    "subjectCode": "INF423",
+    "preReqs": ["INF511", "INF512", "INF513", "INF552"],
+    "careersCode": ["187-3", "187-4"],
+    "semester": 8
+  },
+  {
+    "subjectCode": "ECO449",
+    "preReqs": ["INF511", "INF512", "INF513", "INF552"],
+    "careersCode": ["187-3", "187-4"],
+    "semester": 8
+  },
+  {
+    "subjectCode": "INF428",
+    "preReqs": ["INF511", "INF512", "INF513", "INF552"],
+    "careersCode": ["187-3"],
+    "semester": 8
+  },
+  {
+    "subjectCode": "INF422",
+    "preReqs": ["INF511", "INF512", "INF513", "INF552"],
+    "careersCode": ["187-3", "187-4"],
+    "semester": 8
+  },
+  {
+    "subjectCode": "INF442",
+    "preReqs": ["INF511", "INF512", "INF513", "INF552"],
+    "careersCode": ["187-3", "187-4"],
+    "semester": 8
+  },
+  {
+    "subjectCode": "INF462",
+    "preReqs": ["INF511", "INF512", "INF513", "INF552"],
+    "careersCode": ["187-4"],
+    "semester": 8
+  },
+  {
+    "subjectCode": "INF423",
+    "preReqs": ["INF511", "INF513", "RDS511", "RDS512", "RDS519"],
+    "careersCode": ["187-5"],
+    "semester": 8
+  },
+  {
+    "subjectCode": "ECO449",
+    "preReqs": ["INF511", "INF513", "RDS511", "RDS512", "RDS519"],
+    "careersCode": ["187-5"],
+    "semester": 8
+  },
+  {
+    "subjectCode": "RDS421",
+    "preReqs": ["INF511", "INF513", "RDS511", "RDS512", "RDS519"],
+    "careersCode": ["187-5"],
+    "semester": 8
+  },
+  {
+    "subjectCode": "RDS429",
+    "preReqs": ["INF511", "INF513", "RDS511", "RDS512", "RDS519"],
+    "careersCode": ["187-5"],
+    "semester": 8
+  },
+  {
+    "subjectCode": "ELT384",
+    "preReqs": ["INF511", "INF513", "RDS511", "RDS512", "RDS519"],
+    "careersCode": ["187-5"],
+    "semester": 8
+  },
+  {
+    "subjectCode": "INF511",
+    "preReqs": ["GRL001"],
+    "careersCode": ["187-3", "187-4", "187-5"],
+    "semester": 9
+  },
+  {
+    "subjectCode": "INF512",
+    "preReqs": ["GRL001"],
+    "careersCode": ["187-3", "187-4"],
+    "semester": 9
+  },
+  {
+    "subjectCode": "INF513",
+    "preReqs": ["GRL001"],
+    "careersCode": ["187-3", "187-4", "187-5"],
+    "semester": 9
+  },
+  {
+    "subjectCode": "INF552",
+    "preReqs": ["GRL001"],
+    "careersCode": ["187-3", "187-4"],
+    "semester": 9
+  },
+  {
+    "subjectCode": "RDS511",
+    "preReqs": ["GRL001"],
+    "careersCode": ["187-5"],
+    "semester": 9
+  },
+  {
+    "subjectCode": "RDS519",
+    "preReqs": ["GRL001"],
+    "careersCode": ["187-5"],
+    "semester": 9
+  }
+]

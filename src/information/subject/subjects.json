@@ -1,0 +1,722 @@
+[
+  {
+    "code": "MAT101",
+    "name": "Cálculo I",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 6
+  },
+  {
+    "code": "FIS100",
+    "name": "Física I",
+    "HT": 4,
+    "HP": 4,
+    "HS": 128,
+    "CR": 5
+  },
+  {
+    "code": "LIN100",
+    "name": "Inglés Técnico I",
+    "HT": 3,
+    "HP": 3,
+    "HS": 96,
+    "CR": 4
+  },
+  {
+    "code": "INF119",
+    "name": "Estructuras Discretas",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 5
+  },
+  {
+    "code": "INF110",
+    "name": "Introducción a la Informática",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 5
+  },
+  {
+    "code": "MAT102",
+    "name": "Cálculo II",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 5
+  },
+  {
+    "code": "MAT103",
+    "name": "Álgebra Lineal",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 5
+  },
+  {
+    "code": "INF120",
+    "name": "Programación I",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 5
+  },
+  {
+    "code": "FIS102",
+    "name": "Física II",
+    "HT": 4,
+    "HP": 4,
+    "HS": 124,
+    "CR": 6
+  },
+  {
+    "code": "LIN101",
+    "name": "Inglés Técnico",
+    "HT": 3,
+    "HP": 3,
+    "HS": 96,
+    "CR": 4
+  },
+  {
+    "code": "INF211",
+    "name": "Arquitectura de Computadoras",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 5
+  },
+  {
+    "code": "INF210",
+    "name": "Programación II",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 5
+  },
+  {
+    "code": "MAT207",
+    "name": "Ecuaciones Diferenciales",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 5
+  },
+  {
+    "code": "ADM100",
+    "name": "Administración",
+    "HT": 3,
+    "HP": 3,
+    "HS": 96,
+    "CR": 4
+  },
+  {
+    "code": "FIS200",
+    "name": "Física III",
+    "HT": 4,
+    "HP": 4,
+    "HS": 124,
+    "CR": 6
+  },
+  {
+    "code": "RDS210",
+    "name": "Análisis de Circuitos",
+    "HT": 4,
+    "HP": 4,
+    "HS": 124,
+    "CR": 6
+  },
+  {
+    "code": "ELT241",
+    "name": "Teoría de Campos",
+    "HT": 4,
+    "HP": 4,
+    "HS": 124,
+    "CR": 6
+  },
+  {
+    "code": "MAT202",
+    "name": "Probabilidades y Estadística I",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 5
+  },
+  {
+    "code": "INF221",
+    "name": "Programación Ensamblador",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 5
+  },
+  {
+    "code": "MAT205",
+    "name": "Métodos Numéricos",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 5
+  },
+  {
+    "code": "INF220",
+    "name": "Estructura de Datos I",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 5
+  },
+  {
+    "code": "ADM200",
+    "name": "Contabilidad",
+    "HT": 3,
+    "HP": 3,
+    "HS": 96,
+    "CR": 4
+  },
+  {
+    "code": "RDS220",
+    "name": "Análisis de Circuitos Electrónicos",
+    "HT": 4,
+    "HP": 4,
+    "HS": 124,
+    "CR": 6
+  },
+  {
+    "code": "MAT302",
+    "name": "Probabilidades y Estadísticas II",
+    "HT": 4,
+    "HP": 4,
+    "HS": 96,
+    "CR": 5
+  },
+  {
+    "code": "INF312",
+    "name": "Bases de Datos I",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 5
+  },
+  {
+    "code": "INF319",
+    "name": "Lenguajes Formales",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 5
+  },
+  {
+    "code": "INF318",
+    "name": "Programación Lógica y Funcional",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 5
+  },
+  {
+    "code": "INF310",
+    "name": "Estructuras de Datos II",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 5
+  },
+  {
+    "code": "EC0300",
+    "name": "Economía para la gestión",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 5
+  },
+  {
+    "code": "ADM330",
+    "name": "Organización y Métodos",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 5
+  },
+  {
+    "code": "RDS310",
+    "name": "Electrónica Aplicada a Redes",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 5
+  },
+  {
+    "code": "ELT352",
+    "name": "Sistemas Lógicos y Digitales I",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 5
+  },
+  {
+    "code": "ELT354",
+    "name": "Señales y Sistemas",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 5
+  },
+  {
+    "code": "INF323",
+    "name": "Sistemas Operativos I",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 5
+  },
+  {
+    "code": "INF322",
+    "name": "Bases de Datos II",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 5
+  },
+  {
+    "code": "MAT329",
+    "name": "Investigación Operativa I",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 5
+  },
+  {
+    "code": "INF329",
+    "name": "Compiladores",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 5
+  },
+  {
+    "code": "INF342",
+    "name": "Sistemas de Información I",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 5
+  },
+  {
+    "code": "ADM320",
+    "name": "Finanzas para la empresa",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 5
+  },
+  {
+    "code": "ELT362",
+    "name": "Sistemas Lógicos y Digitales II",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 5
+  },
+  {
+    "code": "RDS320",
+    "name": "Interpretación de Sistemas y Señales",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 5
+  },
+  {
+    "code": "INF433",
+    "name": "Redes I",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 5
+  },
+  {
+    "code": "INF413",
+    "name": "Sistemas Operativos II",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 5
+  },
+  {
+    "code": "MAT419",
+    "name": "Investigación Operativa II",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 5
+  },
+  {
+    "code": "INF418",
+    "name": "Inteligencia Artificial",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 5
+  },
+  {
+    "code": "INF412",
+    "name": "Sistemas de Información II",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 5
+  },
+  {
+    "code": "INF432",
+    "name": "Sistemas para el soporte a la toma de decisiones",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 5
+  },
+  {
+    "code": "RDS410",
+    "name": "Aplicaciones con Microprocesadores",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 5
+  },
+  {
+    "code": "ELT374",
+    "name": "Sistemas de Comunicación I",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 5
+  },
+  {
+    "code": "INF423",
+    "name": "Redes II",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 5
+  },
+  {
+    "code": "ECO449",
+    "name": "Preparación y Evaluación de Proyectos",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 5
+  },
+  {
+    "code": "INF428",
+    "name": "Sistemas Expertos",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 5
+  },
+  {
+    "code": "INF422",
+    "name": "Ingeniería de Software",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 5
+  },
+  {
+    "code": "INF442",
+    "name": "Sistemas de Información Geográfica",
+    "HT": 3,
+    "HP": 3,
+    "HS": 96,
+    "CR": 4
+  },
+  {
+    "code": "INF462",
+    "name": "Auditoría Informática",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 5
+  },
+  {
+    "code": "RDS421",
+    "name": "Taller de Análisis y Diseño de Redes",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 5
+  },
+  {
+    "code": "RDS429",
+    "name": "Legislación en Redes y Comunicaciones",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 5
+  },
+  {
+    "code": "ELT384",
+    "name": "Sistemas de Comunicación II",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 5
+  },
+  {
+    "code": "INF511",
+    "name": "Taller de Grado I",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 5
+  },
+  {
+    "code": "INF512",
+    "name": "Ingeniería de Software II",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 5
+  },
+  {
+    "code": "INF513",
+    "name": "Tecnología WEB",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 5
+  },
+  {
+    "code": "INF552",
+    "name": "Arquitectura de Software",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 4
+  },
+  {
+    "code": "RDS511",
+    "name": "Gestión y Administración de Redes",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 4
+  },
+  {
+    "code": "RDS512",
+    "name": "Redes inalámbricas y comunicaciones Móviles",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 4
+  },
+  {
+    "code": "RDS519",
+    "name": "Seguridad en Redes y Transmisión de datos",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 4
+  },
+  {
+    "code": "GRL001",
+    "name": "Modalidad de titulación Licenciatura",
+    "HT": 4,
+    "HP": 2,
+    "HS": 96,
+    "CR": 4
+  },
+  {
+    "code": "ELC101",
+    "name": "Modelación y Simulación de Sistemas",
+    "HT": 2,
+    "HP": 2,
+    "HS": 64,
+    "CR": 3
+  },
+  {
+    "code": "ELC102",
+    "name": "Programación Gráfica",
+    "HT": 2,
+    "HP": 2,
+    "HS": 64,
+    "CR": 3
+  },
+  {
+    "code": "ELC103",
+    "name": "Tópicos Avanzados de Programación",
+    "HT": 2,
+    "HP": 2,
+    "HS": 64,
+    "CR": 3
+  },
+  {
+    "code": "ELC104",
+    "name": "Programación de aplicaciones en tiempo real",
+    "HT": 2,
+    "HP": 2,
+    "HS": 64,
+    "CR": 3
+  },
+  {
+    "code": "ELC105",
+    "name": "Sistemas Distribuidos",
+    "HT": 2,
+    "HP": 2,
+    "HS": 64,
+    "CR": 3
+  },
+  {
+    "code": "ELC106",
+    "name": "Interacción Hombre - Computador",
+    "HT": 2,
+    "HP": 2,
+    "HS": 64,
+    "CR": 3
+  },
+  {
+    "code": "ELC107",
+    "name": "Criptografía y Seguridad",
+    "HT": 2,
+    "HP": 2,
+    "HS": 64,
+    "CR": 3
+  },
+  {
+    "code": "ELC108",
+    "name": "Control y Automatización",
+    "HT": 2,
+    "HP": 2,
+    "HS": 64,
+    "CR": 3
+  },
+  {
+    "code": "ELC001",
+    "name": "Administración de Recursos Humanos",
+    "HT": 2,
+    "HP": 2,
+    "HS": 64,
+    "CR": 3
+  },
+  {
+    "code": "ELC002",
+    "name": "Costos y Presupuestos",
+    "HT": 2,
+    "HP": 2,
+    "HS": 64,
+    "CR": 3
+  },
+  {
+    "code": "ELC003",
+    "name": "Producción y Marketing",
+    "HT": 2,
+    "HP": 2,
+    "HS": 64,
+    "CR": 3
+  },
+  {
+    "code": "ELC004",
+    "name": "Reingeniería",
+    "HT": 2,
+    "HP": 2,
+    "HS": 64,
+    "CR": 3
+  },
+  {
+    "code": "ELC005",
+    "name": "Ingeniería de calidad",
+    "HT": 2,
+    "HP": 2,
+    "HS": 64,
+    "CR": 3
+  },
+  {
+    "code": "ELC006",
+    "name": "Benchmarking",
+    "HT": 2,
+    "HP": 2,
+    "HS": 64,
+    "CR": 3
+  },
+  {
+    "code": "ELC007",
+    "name": "Criptografía y Seguridad",
+    "HT": 2,
+    "HP": 2,
+    "HS": 64,
+    "CR": 3
+  },
+  {
+    "code": "ELC008",
+    "name": "Control y Automatización",
+    "HT": 2,
+    "HP": 2,
+    "HS": 64,
+    "CR": 3
+  },
+  {
+    "code": "ELC201",
+    "name": "Diseño de Circuitos Integrados",
+    "HT": 2,
+    "HP": 2,
+    "HS": 64,
+    "CR": 3
+  },
+  {
+    "code": "ELC202",
+    "name": "Instrumentación",
+    "HT": 2,
+    "HP": 2,
+    "HS": 64,
+    "CR": 3
+  },
+  {
+    "code": "ELC203",
+    "name": "Sistemas de Comunicación Scada",
+    "HT": 2,
+    "HP": 2,
+    "HS": 64,
+    "CR": 3
+  },
+  {
+    "code": "ELC204",
+    "name": "Televisión Digital",
+    "HT": 2,
+    "HP": 2,
+    "HS": 64,
+    "CR": 3
+  },
+  {
+    "code": "ELC205",
+    "name": "Domótica",
+    "HT": 2,
+    "HP": 2,
+    "HS": 64,
+    "CR": 3
+  },
+  {
+    "code": "ELC206",
+    "name": "Líneas de Transmisión y Antenas",
+    "HT": 2,
+    "HP": 2,
+    "HS": 64,
+    "CR": 3
+  },
+  {
+    "code": "ELC207",
+    "name": "Técnicas de presentación para Ingeniería",
+    "HT": 2,
+    "HP": 2,
+    "HS": 64,
+    "CR": 3
+  },
+  {
+    "code": "ELC208",
+    "name": "Redes Ad Hoc",
+    "HT": 2,
+    "HP": 2,
+    "HS": 64,
+    "CR": 3
+  }
+]
