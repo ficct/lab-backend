@@ -21,5 +21,7 @@ export class CareerService extends TypeOrmCrudService<Career> {
         .values(careers)
         .execute();
     }
+
+    return this.repo.find();
   }
 }
