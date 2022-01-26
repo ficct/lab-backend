@@ -11,7 +11,9 @@ export class AppController {
   constructor(
     private authService: AuthService,
     private readonly appService: AppService,
-  ) {}
+  ) {
+    this.appService.seedDB().finally(() => null);
+  }
 
   @Get()
   getDocs(@Res() res): string {
