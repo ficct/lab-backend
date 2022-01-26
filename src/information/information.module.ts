@@ -6,5 +6,6 @@ import { SubjectModule } from './subject/subject.module';
 
 @Module({
   imports: [JobModule, CareerModule, SubjectModule],
+  exports: [JobModule, CareerModule, SubjectModule],
 })
 export class InformationModule {}
