@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { ScheduleModule } from '@nestjs/schedule';
 
 import { AppService } from './app.service';
 import { AppController } from './app.controller';
@@ -13,6 +14,7 @@ import { InformationModule } from './information/information.module';
   imports: [
     ConfigModule.forRoot(),
     TypeOrmModule.forRoot(),
+    ScheduleModule.forRoot(),
     //
     AuthModule,
     InventoryModule,
