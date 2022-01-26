@@ -11,5 +11,6 @@ import { CareerController } from './career.controller';
   imports: [TypeOrmModule.forFeature([Career])],
   controllers: [CareerController],
   providers: [CareerService],
+  exports: [CareerService],
 })
 export class CareerModule {}
