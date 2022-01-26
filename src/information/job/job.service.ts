@@ -4,7 +4,6 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { CrudRequest } from '@nestjsx/crud';
 import { TypeOrmCrudService } from '@nestjsx/crud-typeorm';
 
-import { job } from './jobs.json';
 import { JobTitle } from 'entities/JobTitle';
 
 @Injectable()
@@ -28,12 +27,5 @@ export class JobService extends TypeOrmCrudService<JobTitle> {
     }
 
     return job;
-  }
-
-  async seed() {
-    const jobCount = await this.repo.count();
-    if (!jobCount) {
-      await this.repo.save(this.repo.create(job));
-    }
   }
 }
