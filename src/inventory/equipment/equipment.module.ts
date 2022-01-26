@@ -37,11 +37,5 @@ import { EquipmentBrandController } from './equipment-brand/equipment-brand.cont
     EquipmentTypeService,
     EquipmentBrandService,
   ],
-  exports: [
-    EquipmentService,
-    EquipmentUnitService,
-    EquipmentTypeService,
-    EquipmentBrandService,
-  ],
 })
 export class EquipmentModule {}
