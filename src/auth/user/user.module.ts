@@ -13,8 +13,10 @@ import { UserController } from './user.controller';
 import { RoleController } from './role/role.controller';
 import { UserActionController } from './user-action/user-action.controller';
 
+import { MailModule } from '../mail/mail.module';
+
 @Module({
-  imports: [TypeOrmModule.forFeature([User, Role, UserAction])],
+  imports: [MailModule, TypeOrmModule.forFeature([User, Role, UserAction])],
   providers: [UserService, RoleService, UserActionService],
   controllers: [UserController, RoleController, UserActionController],
   exports: [UserService],
