@@ -9,9 +9,13 @@ import { MovementReasonService } from './movement-reason/movement-reason.service
 
 import { MovementController } from './movement.controller';
 import { MovementReasonController } from './movement-reason/movement-reason.controller';
+import { EquipmentModule } from '../equipment/equipment.module';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Movement, MovementReason])],
+  imports: [
+    EquipmentModule,
+    TypeOrmModule.forFeature([Movement, MovementReason]),
+  ],
   controllers: [MovementController, MovementReasonController],
   providers: [MovementService, MovementReasonService],
 })
