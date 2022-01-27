@@ -7,8 +7,8 @@ import { User } from 'entities/User';
 export class MailService {
   constructor(private mailerService: MailerService) {}
 
-  async sendUserConfirmation(user: User, token: string) {
-    const url = `example.com/auth/confirm?token=${token}`;
+  async sendUserConfirmation(user: User, token = process.env.SECRET) {
+    const url = `${process.env.ROOT}/users/${user.id}/confirm?token=${token}`;
 
     await this.mailerService.sendMail({
       to: user.verifiedEmail,
