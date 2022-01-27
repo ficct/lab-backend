@@ -25,7 +25,22 @@ export class UserService extends TypeOrmCrudService<User> {
 
   async createOne(req: CrudRequest, dto: DeepPartial<User>): Promise<User> {
     const user = await super.createOne(req, dto);
-    this.mailService.sendUserConfirmation(user, process.env.SECRET);
+    await this.mailService.sendUserConfirmation(user);
     return user;
+  }
+
+  async resendMail(userId: number) {
+    const user = await this.repo.findOne(userId);
+    await this.mailService.sendUserConfirmation(user);
+  }
+
+  async confirmMail(userId: number, token: string) {
+    const user = await this.repo.findOne(userId);
+    if (token === process.env.SECRET) {
+      user.isVerified = true;
+      this.repo.save(user);
+      return true;
+    }
+    return false;
   }
 }
