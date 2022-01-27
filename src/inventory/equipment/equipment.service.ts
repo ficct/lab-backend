@@ -5,17 +5,18 @@ import { CrudRequest } from '@nestjsx/crud';
 import { TypeOrmCrudService } from '@nestjsx/crud-typeorm';
 
 import { Equipment } from 'entities/Equipment';
+import { Repository } from 'typeorm';
 
 interface QueryEquipmentOptions {
   page: number;
   limit: number;
-  placeId?: number;
   search?: string;
+  placeId?: number;
 }
 
 @Injectable()
 export class EquipmentService extends TypeOrmCrudService<Equipment> {
-  constructor(@InjectRepository(Equipment) repo) {
+  constructor(@InjectRepository(Equipment) public repo: Repository<Equipment>) {
     super(repo);
   }
 
